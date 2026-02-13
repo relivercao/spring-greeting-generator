@@ -17,7 +17,8 @@
         .features { text-align: left; margin: 25px 0; }
         .features li { margin: 12px 0; color: #555; list-style: none; font-size: 14px; }
         .features li::before { content: "✨"; margin-right: 8px; }
-        .cta { background: linear-gradient(135deg, #ff4d4d, #ff6b35); color: white; border: none; padding: 16px 32px; font-size: 18px; border-radius: 30px; cursor: pointer; width: 100%; margin-top: 20px; font-weight: bold; text-decoration: none; display: block; }
+        .cta { background: linear-gradient(135deg, #00c6fb, #005bea); color: white; border: none; padding: 16px 32px; font-size: 18px; border-radius: 30px; cursor: pointer; width: 100%; margin-top: 20px; font-weight: bold; text-decoration: none; display: block; }
+        .cta2 { background: #07c160; color: white; border: none; padding: 16px 32px; font-size: 18px; border-radius: 30px; cursor: pointer; width: 100%; margin-top: 10px; font-weight: bold; text-decoration: none; display: block; }
         .price { margin-top: 20px; color: #888; }
         .price span { color: #ff4d4d; font-size: 28px; font-weight: bold; }
     </style>
@@ -34,9 +35,15 @@
         <ul class="features">
             <li>📝 <b>6种场景</b>：长辈、领导、朋友、客户</li>
             <li>🎨 <b>5种风格</b>：正式、温馨、幽默</li>
-            <li>⚡ <b>5分钟</b>出稿</li>
+            <li>⚡ <b>5分钟</b>出稿，可修改</li>
         </ul>
-        <a href="https://t.me/relivercao" class="cta">📩 立即体验</a>
+        <!-- 飞书二维码 -->
+        <a href="https://www.feishu.cn/invitation/page/add_contact/?token=Dc4JsG4Tw" class="cta" target="_blank">
+            📎 添加飞书
+        </a>
+        <a href="weixin://" class="cta2" onclick="alert('微信扫码添加客服')">
+            💬 微信咨询
+        </a>
         <p class="price">批量10条 <span>¥9.9</span></p>
     </div>
 </body>
