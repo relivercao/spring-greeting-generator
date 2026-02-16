@@ -4,10 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧧 2026除夕快乐 - 马年吉祥 🐴</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #8b0000 50%, #c41e3a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* 背景图案 */
+        .bg-pattern {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255,215,0,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,0,0,0.1) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 30 L43 45 L30 35 L17 45 L22 30 L10 20 L25 20 Z' fill='%23ffd700' fill-opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        /* 灯笼 */
+        .lantern {
+            position: absolute;
+            font-size: 80px;
+            animation: swing 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255,100,0,0.5);
+        }
+        .lantern-left { top: 20px; left: 30px; }
+        .lantern-right { top: 20px; right: 30px; animation-delay: 1.5s; }
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        /* 主标题 */
+        .title {
+            font-size: clamp(36px, 8vw, 72px);
+            color: #ffd700;
+            text-shadow: 
+                0 0 10px #ff6600,
+                0 0 20px #ff6600,
+                0 0 40px #ff0000,
+                2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 40px #ff0000; }
+            to { text-shadow: 0 0 20px #ffd700, 0 0 40px #ff6600, 0 0 60px #ff0000; }
+        }
+        /* 副标题 */
+        .subtitle {
+            font-size: clamp(24px, 5vw, 40px);
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        /* 年年有余 */
+        .fish {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: swim 3s ease-in-out infinite;
+        }
+        @keyframes swim {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(10px) rotate(5deg); }
+            75% { transform: translateX(-10px) rotate(-5deg); }
+        }
+        /* 祝福语 */
+        .wishes {
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,0,0,0.2));
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            padding: 30px 50px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .wishes h3 {
+            color: #ffd700;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .wishes p {
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        /* 按钮 */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #8b0000;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255,215,0,0.4);
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255,215,0,0.6);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #ff6b6b, #c41e3a);
+            color: white;
+        }
+        /* 底部 */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        /* 烟花 */
+        .firework {
+            position: absolute;
+            font-size: 40px;
+            animation: fade 2s infinite;
+        }
+        .fw1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .fw2 { top: 15%; right: 15%; animation-delay: 0.5s; }
+        .fw3 { top: 50%; left: 5%; animation-delay: 1s; }
+        .fw4 { top: 40%; right: 8%; animation-delay: 1.5s; }
+        @keyframes fade {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        /* 马年吉祥 */
+        .horse {
+            font-size: 80px;
+            margin: 20px 0;
+            animation: horseJump 2s ease-in-out infinite;
+        }
+        @keyframes horseJump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
 </head>
-<body style="background: #c41e3a; color: white; text-align: center; padding: 50px;">
-    <h1>🧧 2026除夕快乐 🐴</h1>
-    <h2>马年吉祥，马到成功！</h2>
-    <p>辞旧岁，迎新春</p>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <!-- 灯笼 -->
+    <div class="lantern lantern-left">🏮</div>
+    <div class="lantern lantern-right">🏮</div>
+    
+    <!-- 烟花 -->
+    <div class="firework fw1">🎆</div>
+    <div class="firework fw2">🎇</div>
+    <div class="firework fw3">✨</div>
+    <div class="firework fw4">💫</div>
+    
+    <div class="container">
+        <div class="title">🧧 2026 除夕快乐 🧧</div>
+        
+        <div class="horse">🐴</div>
+        
+        <div class="subtitle">🐴 马年吉祥 · 马到成功 🐴</div>
+        
+        <div class="fish">🐟</div>
+        
+        <div class="wishes">
+            <h3>✨ 辞旧岁 · 迎新春 ✨</h3>
+            <p>
+                恭喜发财 🧧 | 万事如意<br>
+                岁岁平安 🎊 | 心想事成<br>
+                财源广进 💰 | 吉星高照
+            </p>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <button class="btn" onclick="alert('感谢祝福！')">🧧 新年快乐</button>
+            <button class="btn btn-secondary" onclick="alert('定制祝福服务，联系客服')">✍️ 定制祝福</button>
+        </div>
+        
+        <div class="footer">
+            © 2026 春节祝福服务
+        </div>
+    </div>
 </body>
 </html>
