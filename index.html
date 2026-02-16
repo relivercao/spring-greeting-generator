@@ -10,18 +10,20 @@
             font-family: "Microsoft YaHei", "Noto Serif SC", serif;
             background: linear-gradient(180deg, #0a0a15 0%, #1a0505 30%, #8b0000 70%, #c41e3a 100%);
             min-height: 100vh;
-            overflow-x: hidden;
             color: #fff;
-            padding-bottom: 120px;
         }
         .container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            padding: 40px 20px 60px;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
-            position: relative;
         }
         .title {
             font-size: clamp(48px, 10vw, 96px);
@@ -118,17 +120,13 @@
         .deco-4 { bottom: 20%; right: 8%; }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
         
-        /* 底部固定横幅 - 非常重要！*/
+        /* 底部 - 用flex布局放在主内容下方 */
         .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(139,0,0,0.95), rgba(139,0,0,0.8));
+            background: linear-gradient(to top, rgba(139,0,0,0.95), rgba(139,0,0,0.7));
             padding: 25px;
             text-align: center;
-            z-index: 9999;
             border-top: 3px solid #ffd700;
+            flex-shrink: 0;
         }
         .footer-text {
             font-size: 32px;
@@ -141,41 +139,42 @@
 </head>
 <body>
     <div class="container">
-        <div class="deco deco-1">🏮</div>
-        <div class="deco deco-2">🏮</div>
-        <div class="deco deco-3">🎆</div>
-        <div class="deco deco-4">💰</div>
-        
-        <h1 class="title">🧧 2026 除夕快乐 🧧</h1>
-        <div class="subtitle">辞旧岁 · 迎新春</div>
-        <div class="horse">🐴</div>
-        
-        <div class="card">
-            <div class="card-title">✨ 马年吉祥 · 马到成功 ✨</div>
-            <div class="fish">
-                <span>🐟</span>
-                <span class="fish-text">年年有余</span>
-                <span>🐟</span>
+        <div class="main-content">
+            <div class="deco deco-1">🏮</div>
+            <div class="deco deco-2">🏮</div>
+            <div class="deco deco-3">🎆</div>
+            <div class="deco deco-4">💰</div>
+            
+            <h1 class="title">🧧 2026 除夕快乐 🧧</h1>
+            <div class="subtitle">辞旧岁 · 迎新春</div>
+            <div class="horse">🐴</div>
+            
+            <div class="card">
+                <div class="card-title">✨ 马年吉祥 · 马到成功 ✨</div>
+                <div class="fish">
+                    <span>🐟</span>
+                    <span class="fish-text">年年有余</span>
+                    <span>🐟</span>
+                </div>
+                <div class="blessings">
+                    <div class="blessing"><span class="icon">🧧</span><span class="text">恭喜发财</span></div>
+                    <div class="blessing"><span class="icon">🎊</span><span class="text">万事如意</span></div>
+                    <div class="blessing"><span class="icon">💰</span><span class="text">财源广进</span></div>
+                    <div class="blessing"><span class="icon">✨</span><span class="text">吉星高照</span></div>
+                    <div class="blessing"><span class="icon">🎉</span><span class="text">岁岁平安</span></div>
+                    <div class="blessing"><span class="icon">❤️</span><span class="text">心想事成</span></div>
+                </div>
             </div>
-            <div class="blessings">
-                <div class="blessing"><span class="icon">🧧</span><span class="text">恭喜发财</span></div>
-                <div class="blessing"><span class="icon">🎊</span><span class="text">万事如意</span></div>
-                <div class="blessing"><span class="icon">💰</span><span class="text">财源广进</span></div>
-                <div class="blessing"><span class="icon">✨</span><span class="text">吉星高照</span></div>
-                <div class="blessing"><span class="icon">🎉</span><span class="text">岁岁平安</span></div>
-                <div class="blessing"><span class="icon">❤️</span><span class="text">心想事成</span></div>
+            
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="alert('🧧 新年快乐！愿您万事如意！')">🧧 送祝福</button>
+                <button class="btn btn-secondary" onclick="alert('定制祝福服务请联系客服')">✨ 定制祝福</button>
             </div>
         </div>
         
-        <div class="btn-group">
-            <button class="btn btn-primary" onclick="alert('🧧 新年快乐！愿您万事如意！')">🧧 送祝福</button>
-            <button class="btn btn-secondary" onclick="alert('定制祝福服务请联系客服')">✨ 定制祝福</button>
+        <div class="footer">
+            <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
         </div>
-    </div>
-    
-    <!-- 底部固定横幅 -->
-    <div class="footer">
-        <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
     </div>
 </body>
 </html>
