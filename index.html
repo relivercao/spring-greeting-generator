@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧧 2026除夕快乐 - 马年吉祥 🐴</title>
+    <title>🧧 2026大年初一 | 马年吉祥 🐴</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -11,43 +11,39 @@
             --red-deep: #1a0505;
             --red-mid: #8b0000;
             --red-bright: #c41e3a;
-            --gold-yellow: #ffd700;
+            --gold: #ffd700;
             --gold-orange: #ff8c00;
-            --gold-light: #fff8dc;
         }
         
         body {
-            font-family: "Noto Serif SC", "Microsoft YaHei", "PingFang SC", serif;
-            background: linear-gradient(180deg, var(--red-deep) 0%, #2a0808 20%, var(--red-mid) 50%, var(--red-bright) 100%);
+            font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+            background: linear-gradient(180deg, #0a0505 0%, #1a0808 20%, #8b0000 50%, #c41e3a 100%);
             min-height: 100vh;
             color: #fff;
             overflow-x: hidden;
         }
         
-        /* 星空粒子 */
         .particles {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
-            overflow: hidden;
         }
         .particle {
             position: absolute;
             width: 4px; height: 4px;
-            background: var(--gold-yellow);
+            background: var(--gold);
             border-radius: 50%;
             opacity: 0;
-            animation: particle-float 4s ease-in-out infinite;
+            animation: float-up 4s ease-in-out infinite;
         }
-        @keyframes particle-float {
+        @keyframes float-up {
             0% { opacity: 0; transform: translateY(100vh) scale(0); }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { opacity: 0; transform: translateY(-100px) scale(1); }
         }
         
-        /* 主容器 */
         .wrapper {
             min-height: 100vh;
             display: flex;
@@ -56,29 +52,22 @@
             z-index: 1;
         }
         
-        /* 顶部装饰 */
         .top-decor {
             display: flex;
             justify-content: space-between;
             padding: 20px 40px;
-            animation: slideDown 1s ease-out;
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
         .lantern {
             font-size: 60px;
-            animation: lantern-swing 3s ease-in-out infinite;
+            animation: swing 3s ease-in-out infinite;
             filter: drop-shadow(0 0 15px rgba(255,100,0,0.6));
         }
         .lantern-right { animation-delay: 1.5s; }
-        @keyframes lantern-swing {
+        @keyframes swing {
             0%, 100% { transform: rotate(-8deg); }
             50% { transform: rotate(8deg); }
         }
         
-        /* 主内容区 */
         .main {
             flex: 1;
             display: flex;
@@ -88,135 +77,118 @@
             padding: 20px;
         }
         
-        /* 标题区域 */
         .hero {
             text-align: center;
             margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            animation: fadeIn 1s ease-out;
         }
-        @keyframes fadeInUp {
+        @keyframes fadeIn {
             from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         
         .main-title {
-            font-size: clamp(52px, 12vw, 110px);
+            font-size: clamp(48px, 12vw, 110px);
             font-weight: 900;
-            background: linear-gradient(180deg, #ffffff 0%, var(--gold-yellow) 30%, var(--gold-orange) 100%);
+            background: linear-gradient(180deg, #fff 0%, var(--gold) 30%, var(--gold-orange) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             filter: drop-shadow(0 0 30px rgba(255,140,0,0.8));
             letter-spacing: 4px;
-            line-height: 1.2;
-            animation: title-shine 3s ease-in-out infinite alternate;
+            animation: shine 3s ease-in-out infinite alternate;
         }
-        @keyframes title-shine {
+        @keyframes shine {
             from { filter: drop-shadow(0 0 25px rgba(255,100,0,0.7)); }
             to { filter: drop-shadow(0 0 45px rgba(255,215,0,1)); }
         }
         
         .main-subtitle {
             font-size: clamp(18px, 4vw, 32px);
-            color: var(--gold-yellow);
+            color: var(--gold);
             letter-spacing: 16px;
             margin-top: 15px;
             text-shadow: 0 0 20px rgba(255,215,0,0.5);
-            font-weight: 300;
         }
         
-        /* 奔马动画 */
         .horse-section {
             font-size: 100px;
             margin: 20px 0;
-            animation: horse-run 1.2s ease-in-out infinite;
+            animation: gallop 1.2s ease-in-out infinite;
             filter: drop-shadow(0 0 25px rgba(255,200,0,0.5));
         }
-        @keyframes horse-run {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-20px) scale(1.05); }
+        @keyframes gallop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
         
-        /* 祝福卡片 */
         .blessing-card {
-            background: linear-gradient(145deg, rgba(139,0,0,0.75) 0%, rgba(196,30,58,0.85) 100%);
-            border: 2px solid var(--gold-yellow);
+            background: linear-gradient(145deg, rgba(139,0,0,0.75), rgba(196,30,58,0.85));
+            border: 2px solid var(--gold);
             border-radius: 20px;
             padding: 35px 45px;
             margin: 25px 0;
-            box-shadow: 
-                0 0 50px rgba(255,215,0,0.2),
-                0 25px 50px rgba(0,0,0,0.4),
-                inset 0 0 30px rgba(255,215,0,0.05);
+            box-shadow: 0 0 50px rgba(255,215,0,0.2), 0 25px 50px rgba(0,0,0,0.4);
             max-width: 700px;
             width: 90%;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            animation: fadeIn 1s ease-out 0.3s both;
         }
         
         .card-header {
             text-align: center;
             font-size: clamp(22px, 5vw, 34px);
-            color: var(--gold-yellow);
+            color: var(--gold);
             margin-bottom: 20px;
-            text-shadow: 0 0 15px rgba(255,215,0,0.5);
         }
         
-        /* 年年有余 */
         .fish-display {
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 42px;
             margin: 20px 0;
-            animation: fish-swim 3s ease-in-out infinite;
+            animation: swim 3s ease-in-out infinite;
         }
-        @keyframes fish-swim {
+        @keyframes swim {
             0%, 100% { transform: translateX(-20px); }
             50% { transform: translateX(20px); }
         }
         .fish-label {
             font-size: 26px;
-            color: var(--gold-yellow);
+            color: var(--gold);
             margin: 0 18px;
-            text-shadow: 0 0 10px rgba(255,215,0,0.5);
         }
         
-        /* 祝福语网格 */
         .blessings-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             margin-top: 25px;
         }
-        @media (max-width: 550px) {
-            .blessings-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (max-width: 550px) { .blessings-grid { grid-template-columns: repeat(2, 1fr); } }
         
         .bless-item {
-            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
+            background: rgba(0,0,0,0.4);
             border: 1px solid rgba(255,215,0,0.35);
             border-radius: 14px;
             padding: 14px 10px;
             text-align: center;
-            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.35s;
         }
         .bless-item:hover {
-            transform: translateY(-10px) scale(1.03);
-            background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(255,140,0,0.15) 100%);
-            border-color: var(--gold-yellow);
-            box-shadow: 0 18px 40px rgba(255,215,0,0.25);
+            transform: translateY(-10px);
+            background: rgba(255,215,0,0.2);
+            border-color: var(--gold);
         }
         .bless-item .icon { font-size: 30px; display: block; margin-bottom: 6px; }
-        .bless-item .txt { font-size: 15px; color: #fff; }
+        .bless-item .txt { font-size: 15px; }
         
-        /* 按钮组 */
         .btn-wrapper {
             display: flex;
             gap: 18px;
             margin-top: 35px;
             flex-wrap: wrap;
             justify-content: center;
-            animation: fadeInUp 1s ease-out 0.9s both;
         }
         
         .btn {
@@ -226,12 +198,11 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
+            transition: all 0.35s;
         }
         
         .btn-gold {
-            background: linear-gradient(135deg, var(--gold-yellow), var(--gold-orange));
+            background: linear-gradient(135deg, var(--gold), var(--gold-orange));
             color: #8b0000;
             box-shadow: 0 8px 30px rgba(255,215,0,0.45);
         }
@@ -242,82 +213,71 @@
         
         .btn-outline {
             background: transparent;
-            color: var(--gold-yellow);
-            border: 2px solid var(--gold-yellow);
+            color: var(--gold);
+            border: 2px solid var(--gold);
         }
         .btn-outline:hover {
             background: rgba(255,215,0,0.15);
             transform: translateY(-5px);
         }
         
-        /* 浮动装饰 */
         .float-deco {
             position: absolute;
             font-size: 36px;
             opacity: 0.75;
-            animation: float-ambient 4s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
             pointer-events: none;
         }
-        .fd-1 { top: 12%; left: 8%; animation-delay: 0s; }
+        .fd-1 { top: 12%; left: 8%; }
         .fd-2 { top: 18%; right: 10%; animation-delay: 1s; }
         .fd-3 { bottom: 25%; left: 6%; animation-delay: 2s; }
         .fd-4 { bottom: 30%; right: 8%; animation-delay: 0.5s; }
-        .fd-5 { top: 40%; left: 3%; animation-delay: 1.5s; }
-        .fd-6 { top: 35%; right: 4%; animation-delay: 2.5s; }
-        
-        @keyframes float-ambient {
-            0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.6; }
-            50% { transform: translateY(-18px) rotate(5deg); opacity: 0.9; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(-18px); opacity: 0.9; }
         }
         
-        /* 底部 */
         .footer {
             background: linear-gradient(to top, rgba(80,0,0,0.9), rgba(80,0,0,0.6));
             padding: 28px 20px;
             text-align: center;
-            border-top: 2px solid var(--gold-yellow);
+            border-top: 2px solid var(--gold);
             flex-shrink: 0;
         }
         
         .footer-txt {
             font-size: 26px;
             font-weight: 600;
-            color: var(--gold-yellow);
-            text-shadow: 0 0 18px rgba(255,215,0,0.7), 2px 2px 4px rgba(0,0,0,0.5);
+            color: var(--gold);
+            text-shadow: 0 0 18px rgba(255,215,0,0.7);
             letter-spacing: 3px;
         }
     </style>
 </head>
 <body>
-    <!-- 粒子效果 -->
     <div class="particles" id="particles"></div>
     
-    <!-- 浮动装饰 -->
     <div class="float-deco fd-1">🏮</div>
     <div class="float-deco fd-2">🎆</div>
     <div class="float-deco fd-3">💰</div>
     <div class="float-deco fd-4">🧧</div>
-    <div class="float-deco fd-5">🎇</div>
-    <div class="float-deco fd-6">✨</div>
     
     <div class="wrapper">
-        <!-- 顶部 -->
         <div class="top-decor">
             <div class="lantern">🏮</div>
             <div class="lantern lantern-right">🏮</div>
         </div>
         
-        <!-- 主内容 -->
         <div class="main">
             <div class="hero">
-                <h1 class="main-title">🧧 2026 除夕快乐 🧧</h1>
-                <p class="main-subtitle">辞旧岁 · 迎新春</p>
+                <h1 class="main-title">🧧 2026 新春大吉 🧧</h1>
+                <p class="main-subtitle">大年初一 · 萬象更新</p>
             </div>
             
             <div class="horse-section">🐴</div>
             
             <div class="blessing-card">
-                <div class="card-header">✨ 马年吉祥 · 马到成功 ✨</div>
+                <div class="card-header">✨ 马年大吉 · 万事顺遂 ✨</div>
                 
                 <div class="fish-display">
                     <span>🐟</span>
@@ -326,56 +286,36 @@
                 </div>
                 
                 <div class="blessings-grid">
-                    <div class="bless-item">
-                        <span class="icon">🧧</span>
-                        <span class="txt">恭喜发财</span>
-                    </div>
-                    <div class="bless-item">
-                        <span class="icon">🎊</span>
-                        <span class="txt">万事如意</span>
-                    </div>
-                    <div class="bless-item">
-                        <span class="icon">💰</span>
-                        <span class="txt">财源广进</span>
-                    </div>
-                    <div class="bless-item">
-                        <span class="icon">✨</span>
-                        <span class="txt">吉星高照</span>
-                    </div>
-                    <div class="bless-item">
-                        <span class="icon">🎉</span>
-                        <span class="txt">岁岁平安</span>
-                    </div>
-                    <div class="bless-item">
-                        <span class="icon">❤️</span>
-                        <span class="txt">心想事成</span>
-                    </div>
+                    <div class="bless-item"><span class="icon">🧧</span><span class="txt">恭喜发财</span></div>
+                    <div class="bless-item"><span class="icon">🎊</span><span class="txt">万事如意</span></div>
+                    <div class="bless-item"><span class="icon">💰</span><span class="txt">财源滚滚</span></div>
+                    <div class="bless-item"><span class="icon">✨</span><span class="txt">吉星高照</span></div>
+                    <div class="bless-item"><span class="icon">🎉</span><span class="txt">岁岁平安</span></div>
+                    <div class="bless-item"><span class="icon">❤️</span><span class="txt">心想事成</span></div>
                 </div>
             </div>
             
             <div class="btn-wrapper">
-                <button class="btn btn-gold" onclick="alert('🧧 新年快乐！愿您万事如意！')">🧧 送祝福</button>
-                <button class="btn btn-outline" onclick="alert('定制祝福服务请联系客服')">✨ 定制祝福</button>
+                <button class="btn btn-gold" onclick="alert('🎉 新年快乐！愿您万事如意！')">🎊 送祝福</button>
+                <button class="btn btn-outline" onclick="alert('定制祝福请联系客服')">✉️ 定制祝福</button>
             </div>
         </div>
         
-        <!-- 底部 -->
         <div class="footer">
             <div class="footer-txt">© 2026 春节祝福服务中心 - 时文</div>
         </div>
     </div>
     
     <script>
-        // 生成粒子
         (function(){
-            const container = document.getElementById('particles');
+            const c = document.getElementById('particles');
             for(let i = 0; i < 30; i++) {
                 const p = document.createElement('div');
                 p.className = 'particle';
                 p.style.left = Math.random() * 100 + '%';
                 p.style.animationDelay = Math.random() * 4 + 's';
                 p.style.animationDuration = (3 + Math.random() * 2) + 's';
-                container.appendChild(p);
+                c.appendChild(p);
             }
         })();
     </script>
