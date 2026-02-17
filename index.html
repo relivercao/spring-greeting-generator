@@ -2,37 +2,42 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>🧧 2026新春大吉 | 马年吉祥 🐴</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
         body {
             font-family: "Microsoft YaHei", sans-serif;
             background: linear-gradient(180deg, #1a0505, #8b0000, #c41e3a);
-            min-height: 100vh; height: 100%;
             color: #fff;
-            overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
         }
-        .container {
-            min-height: 100vh; height: 100%;
-            padding: 30px 20px 120px;
-            text-align: center;
+        .wrapper {
+            min-height: 100vh;
+            padding-bottom: 100px;
+            overflow: auto;
         }
         h1 {
-            font-size: clamp(36px, 10vw, 64px);
+            font-size: clamp(32px, 8vw, 56px);
             color: #ffd700;
-            text-shadow: 0 0 20px #ff8c00;
-            margin: 20px 0;
+            text-shadow: 0 0 15px #ff8c00;
+            text-align: center;
+            padding: 20px;
         }
         .subtitle {
-            font-size: clamp(18px, 4vw, 28px);
+            font-size: clamp(16px, 3vw, 24px);
             color: #ffd700;
-            margin-bottom: 30px;
-            letter-spacing: 4px;
+            text-align: center;
+            letter-spacing: 3px;
         }
         .horse {
-            font-size: 80px;
-            margin: 20px 0;
+            font-size: clamp(60px, 15vw, 100px);
+            text-align: center;
             animation: bounce 1s infinite;
         }
         @keyframes bounce {
@@ -40,44 +45,53 @@
             50% { transform: translateY(-15px); }
         }
         .card {
-            background: rgba(139,0,0,0.8);
+            background: rgba(139,0,0,0.85);
             border: 2px solid #ffd700;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 20px auto;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px;
             max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .card-title {
             color: #ffd700;
-            font-size: 24px;
-            margin-bottom: 15px;
+            text-align: center;
+            font-size: clamp(18px, 4vw, 22px);
+            margin-bottom: 10px;
         }
         .fish {
-            font-size: 36px;
+            text-align: center;
+            font-size: clamp(28px, 6vw, 36px);
             margin: 15px 0;
         }
         .blessings {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
         }
         .bless {
-            background: rgba(0,0,0,0.3);
-            padding: 12px;
-            border-radius: 8px;
+            background: rgba(0,0,0,0.4);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
             font-size: 14px;
         }
+        .btns {
+            text-align: center;
+            padding: 20px;
+        }
         .btn {
-            padding: 15px 40px;
-            font-size: 18px;
-            border-radius: 50px;
-            margin: 10px;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 25px;
+            margin: 5px;
             cursor: pointer;
-            border: none;
         }
         .btn-gold {
             background: linear-gradient(135deg, #ffd700, #ff8c00);
+            border: none;
             color: #8b0000;
         }
         .btn-outline {
@@ -86,35 +100,30 @@
             color: #ffd700;
         }
         .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(80,0,0,0.95), rgba(80,0,0,0.8));
-            padding: 20px;
+            background: rgba(80,0,0,0.95);
+            padding: 25px;
             text-align: center;
             border-top: 2px solid #ffd700;
-            z-index: 100;
         }
         .footer-text {
             color: #ffd700;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
-        .deco { position: fixed; font-size: 30px; opacity: 0.7; }
-        .d1 { top: 10%; left: 5%; }
-        .d2 { top: 10%; right: 5%; }
-        .d3 { bottom: 15%; left: 5%; }
-        .d4 { bottom: 15%; right: 5%; }
+        .deco {
+            position: fixed;
+            font-size: 24px;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
-    <div class="d1">🏮</div>
-    <div class="d2">🏮</div>
-    <div class="d3">🎆</div>
-    <div class="d4">💰</div>
+    <div class="deco" style="top:5%;left:3%">🏮</div>
+    <div class="deco" style="top:5%;right:3%">🏮</div>
+    <div class="deco" style="bottom:15%;left:3%">🎆</div>
+    <div class="deco" style="bottom:15%;right:3%">💰</div>
     
-    <div class="container">
+    <div class="wrapper">
         <h1>🧧 2026 新春大吉 🧧</h1>
         <p class="subtitle">大年初一 · 萬象更新</p>
         
@@ -131,12 +140,14 @@
             </div>
         </div>
         
-        <button class="btn btn-gold" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
-        <button class="btn btn-outline" onclick="alert('请联系客服')">✉️ 定制祝福</button>
-    </div>
-    
-    <div class="footer">
-        <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
+        <div class="btns">
+            <button class="btn btn-gold" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
+            <button class="btn btn-outline" onclick="alert('请联系客服')">✉️ 定制祝福</button>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
+        </div>
     </div>
 </body>
 </html>
