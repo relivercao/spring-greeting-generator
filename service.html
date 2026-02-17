@@ -5,141 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🤖 AI OPENCLAW | 春节祝福服务</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --gold: #ffd700; --red: #c41e3a; --red-dark: #8b0000; }
-        html, body { height: 100%; }
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
-            background: linear-gradient(180deg, #0a0505 0%, #1a0505 20%, var(--red-dark) 50%, var(--red) 100%);
-            color: #fff;
-            min-height: 100vh;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
-        h1 {
-            font-size: clamp(28px, 7vw, 48px);
-            text-align: center;
-            background: linear-gradient(180deg, #fff, var(--gold), #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 20px 0;
-        }
-        .subtitle { font-size: clamp(14px, 3.5vw, 20px); color: var(--gold); text-align: center; margin-bottom: 25px; }
-        
-        .hero-box {
-            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(60,0,0,0.7));
-            border: 2px solid var(--gold);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 25px 0;
-            text-align: center;
-        }
-        
-        .service-card {
-            background: linear-gradient(135deg, rgba(139,0,0,0.8), rgba(196,30,58,0.9));
-            border: 3px solid var(--gold);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 20px 0;
-        }
-        .service-title { color: var(--gold); font-size: 22px; margin-bottom: 15px; text-align: center; }
-        .service-desc { font-size: 16px; margin-bottom: 15px; line-height: 1.6; }
-        .price { font-size: 32px; color: var(--gold); font-weight: bold; }
-        .price-original { font-size: 16px; color: #999; text-decoration: line-through; margin-left: 10px; }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold), #ff8c00);
-            color: #8b0000;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-            margin: 10px 5px;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-        }
-        
-        .step { display: flex; align-items: center; margin: 12px 0; padding: 12px; background: rgba(255,215,0,0.1); border-radius: 10px; }
-        .step-num { background: var(--gold); color: #8b0000; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px; flex-shrink: 0; }
-        
-        .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0; }
-        .feature { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; text-align: center; }
-        .feature-icon { font-size: 28px; }
-        
-        .footer { text-align: center; padding: 30px; color: rgba(255,255,255,0.6); font-size: 14px; }
-        .decor { position: fixed; font-size: 28px; opacity: 0.6; animation: float 3s infinite; }
-        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--gold:#ffd700;--red:#8b0000;--red-light:#c41e3a}
+        html,body{height:100%}
+        body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#0a0505,#1a0505,#8b0000,#c41e3a);color:#fff;min-height:100vh;overflow-y:auto}
+        .container{max-width:700px;margin:0 auto;padding:20px}
+        h1{font-size:clamp(26px,6vw,42px);text-align:center;background:linear-gradient(180deg,#fff,#ffd700,#ff8c00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0}
+        .subtitle{font-size:clamp(14px,3.5vw,18px);color:#ffd700;text-align:center;margin-bottom:25px}
+        .hero{background:linear-gradient(135deg,rgba(0,0,0,0.6),rgba(60,0,0,0.7));border:2px solid #ffd700;border-radius:20px;padding:25px;margin:20px 0;text-align:center}
+        .service{background:linear-gradient(135deg,rgba(139,0,0,0.8),rgba(196,30,58,0.9));border:2px solid #ffd700;border-radius:14px;padding:20px;margin:15px 0}
+        .service-title{color:#ffd700;font-size:20px;margin-bottom:12px}
+        .service-desc{font-size:14px;color:#ccc;margin-bottom:12px;line-height:1.5}
+        .price{font-size:28px;color:#ffd700;font-weight:bold}
+        .price-original{font-size:14px;color:#999;text-decoration:line-through;margin-left:8px}
+        .btn{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#8b0000;padding:12px 28px;border-radius:25px;font-size:14px;font-weight:bold;text-decoration:none;margin:8px 3px;cursor:pointer;border:none}
+        .features{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0}
+        .feature{background:rgba(0,0,0,0.4);padding:12px;border-radius:8px;text-align:center}
+        .footer{text-align:center;padding:25px;color:rgba(255,255,255,0.6);font-size:14px}
     </style>
 </head>
 <body>
-    <div class="decor" style="top:5%;left:3%">🏮</div>
-    <div class="decor" style="top:5%;right:3%">🏮</div>
-    <div class="decor" style="bottom:10%;left:5%">🎆</div>
-    <div class="decor" style="bottom:10%;right:5%">💰</div>
-    
     <div class="container">
-        <h1>🤖 AI 春节祝福服务</h1>
+        <h1>🤖 AI OPENCLAW</h1>
         <p class="subtitle">🧧 定制祝福 · AI赋能 · 马年吉祥 🐴</p>
         
-        <div class="hero-box">
-            <p style="font-size:18px; margin:15px 0;">用AI定制专属祝福</p>
-            <p style="color:#ccc;">让祝福更有心意，让拜年更有创意</p>
+        <div class="hero">
+            <p style="font-size:16px;margin:10px 0;">用AI定制专属祝福</p>
+            <p style="font-size:13px;color:#aaa;">让祝福更有心意，让拜年更有创意</p>
         </div>
         
-        <div class="service-card">
+        <div class="service">
             <div class="service-title">🎊 新春祝福套餐</div>
-            <p class="service-desc">
-                • AI定制祝福文案<br>
-                • 新年/元宵/开工吉日<br>
-                • 朋友圈/小红书模板<br>
-                • 永久更新
-            </p>
+            <div class="service-desc">AI定制祝福文案 · 朋友圈/小红书模板 · 永久更新</div>
             <div class="price">¥9.9 <span class="price-original">¥99</span></div>
-            <div style="text-align:center; margin-top:15px;">
-                <a href="https://relivercao.github.io/spring-greeting-generator/" class="btn">🧧 立即获取祝福</a>
-            </div>
+            <button class="btn" onclick="alert('请联系客服购买')">🧧 立即获取</button>
         </div>
         
-        <div class="service-card">
-            <div class="service-title">🚀 定制祝福服务</div>
-            <p class="service-desc">
-                • 针对个人/企业定制<br>
-                • 品牌元素融入<br>
-                • 专属祝福语创作
-            </p>
+        <div class="service">
+            <div class="service-title">🤖 OpenClaw 部署服务</div>
+            <div class="service-desc">帮你部署属于自己的AI助手 · 支持飞书/Telegram/微信</div>
+            <div class="price">¥9.9 <span class="price-original">¥99</span></div>
+            <button class="btn" onclick="alert('请联系客服部署')">🚀 立即部署</button>
+        </div>
+        
+        <div class="service">
+            <div class="service-title">💎 OpenClaw 深度定制</div>
+            <div class="service-desc">专属AI助手定制 · 企业知识库接入 · 自动化流程搭建</div>
             <div class="price">¥99起</div>
-            <div style="text-align:center; margin-top:15px;">
-                <button class="btn btn-outline" onclick="alert('请联系客服定制')">✉️ 联系我们</button>
-            </div>
+            <button class="btn" onclick="alert('请联系客服定制')">✉️ 联系我们</button>
         </div>
         
-        <div class="service-card">
+        <div class="service">
             <div class="service-title">☁️ 免费部署 OpenClaw</div>
-            <p style="font-size:14px; color:#ccc; margin-bottom:15px;">百度云轻量服务器 0.01元/1年</p>
-            
-            <div class="step"><div class="step-num">1</div><div>下载百度App</div></div>
-            <div class="step"><div class="step-num">2</div><div>搜索 @openclaw</div></div>
-            <div class="step"><div class="step-num">3</div><div>点击部署</div></div>
-            
-            <div style="text-align:center; margin-top:15px;">
-                <button class="btn btn-outline" onclick="alert('百度App搜索 @openclaw')">🔗 了解更多</button>
-            </div>
+            <div class="service-desc">百度云轻量服务器 0.01元/年 · 24小时在线</div>
+            <button class="btn" onclick="alert('百度App搜索 @openclaw')">🔗 了解更多</button>
         </div>
         
         <div class="features">
-            <div class="feature"><div class="feature-icon">💬</div><div>AI对话</div></div>
-            <div class="feature"><div class="feature-icon">📅</div><div>日程提醒</div></div>
-            <div class="feature"><div class="feature-icon">🤖</div><div>自动化</div></div>
-            <div class="feature"><div class="feature-icon">✍️</div><div>内容创作</div></div>
+            <div class="feature"><span style="font-size:24px">💬</span><div style="font-size:12px">AI对话</div></div>
+            <div class="feature"><span style="font-size:24px">📅</span><div style="font-size:12px">日程提醒</div></div>
+            <div class="feature"><span style="font-size:24px">🤖</span><div style="font-size:12px">自动化</div></div>
+            <div class="feature"><span style="font-size:24px">✍️</span><div style="font-size:12px">内容创作</div></div>
         </div>
         
         <div class="footer">
