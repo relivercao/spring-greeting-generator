@@ -47,8 +47,8 @@
         .btn-gold:hover{transform:translateY(-2px)}
         .btn-outline{background:transparent;border:2px solid var(--gold);color:var(--gold)}
         .btn-outline:hover{background:rgba(255,215,0,0.12)}
-        .qr-btn{width:clamp(50px,12vw,65px);height:clamp(50px,12vw,65px);border-radius:8px;border:2px solid var(--gold);background:#fff;padding:3px;cursor:pointer}
-        .qr-btn img{width:100%;height:100%;object-fit:contain}
+        .qr-btn{width:clamp(50px,12vw,65px);height:clamp(50px,12vw,65px);border-radius:8px;border:2px solid var(--gold);background:#fff;padding:3px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:clamp(18px,4vw,24px)}
+        .qr-btn:hover{transform:scale(1.05)}
         .features{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:15px 0;max-width:420px;width:90%}
         .feature{background:rgba(0,0,0,0.45);border-radius:10px;padding:12px 6px;text-align:center}
         .feature-icon{font-size:clamp(22px,5vw,28px)}
@@ -58,6 +58,14 @@
         footer{background:linear-gradient(to top,rgba(90,10,10,0.98),rgba(120,20,30,0.95));padding:15px;text-align:center;border-top:2px solid var(--gold);flex-shrink:0}
         .footer-text{font-size:clamp(12px,3vw,16px);font-weight:600;color:var(--gold)}
         .footer-sub{font-size:11px;color:#aaa;margin-top:4px}
+        
+        /* Modal */
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:100;align-items:center;justify-content:center}
+        .modal.show{display:flex}
+        .modal-content{background:linear-gradient(145deg,rgba(90,10,10,0.95),rgba(120,20,30,0.98));border:2px solid var(--gold);border-radius:16px;padding:20px;max-width:320px;width:90%;text-align:center}
+        .modal-title{color:var(--gold);font-size:18px;margin-bottom:15px}
+        .modal-qr{width:180px;height:180px;background:#fff;border-radius:8px;margin:10px auto;display:flex;align-items:center;justify-content:center}
+        .modal-close{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 20px;border-radius:20px;margin-top:15px;cursor:pointer}
     </style>
 </head>
 <body>
@@ -96,7 +104,7 @@
                 <div class="service-price">¥9.9 <span class="orig">¥99</span></div>
                 <div class="service-row">
                     <a href="https://xcntpuffv4mv.feishu.cn/invite/member/N2_rewHx6bo" target="_blank" class="btn btn-gold">🧧 获取服务</a>
-                    <button class="qr-btn" onclick="alert('请添加飞书客服获取付款方式')"><span style="font-size:12px;color:#666">💳</span></button>
+                    <button class="qr-btn" onclick="showQR()">💳</button>
                 </div>
             </div>
             <div class="service-card">
@@ -105,7 +113,7 @@
                 <div class="service-price">¥9.9 <span class="orig">¥99</span></div>
                 <div class="service-row">
                     <a href="https://xcntpuffv4mv.feishu.cn/invite/member/N2_rewHx6bo" target="_blank" class="btn btn-gold">🚀 立即部署</a>
-                    <button class="qr-btn" onclick="alert('请添加飞书客服获取付款方式')"><span style="font-size:12px;color:#666">💳</span></button>
+                    <button class="qr-btn" onclick="showQR()">💳</button>
                 </div>
             </div>
             <div class="service-card">
@@ -114,7 +122,7 @@
                 <div class="service-price">¥99起</div>
                 <div class="service-row">
                     <a href="https://xcntpuffv4mv.feishu.cn/invite/member/N2_rewHx6bo" target="_blank" class="btn btn-outline">✉️ 联系我们</a>
-                    <button class="qr-btn" onclick="alert('请添加飞书客服获取付款方式')"><span style="font-size:12px;color:#666">💳</span></button>
+                    <button class="qr-btn" onclick="showQR()">💳</button>
                 </div>
             </div>
             <div class="features">
@@ -127,7 +135,22 @@
         </main>
         <footer><div class="footer-text">🧧 祝您新年快乐 · 马年吉祥 🐴</div><div class="footer-sub">🤖 Powered by OPENCLAW</div></footer>
     </div>
+    
+    <!-- QR Modal -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <div class="modal-title">📱 扫码付款</div>
+            <div class="modal-qr">
+                <span style="font-size:60px">💰</span>
+            </div>
+            <p style="color:#ccc;font-size:14px;margin-top:10px">请添加飞书客服获取付款方式</p>
+            <button class="modal-close" onclick="closeQR()">关闭</button>
+        </div>
+    </div>
+    
     <script>
+    function showQR(){document.getElementById('qrModal').classList.add('show')}
+    function closeQR(){document.getElementById('qrModal').classList.remove('show')}
     (function(){var c=document.getElementById('ps'),colors=['#ffd700','#00ffff','#ff9500','#4fc3f7','#fff8dc'];for(var i=0;i<30;i++){var p=document.createElement('p');p.className='particle';var s=2+Math.random()*4;p.style.width=s+'px';p.style.height=s+'px';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.boxShadow='0 0 '+(s*2)+'px '+p.style.background;p.style.animationDuration=(4+Math.random()*4)+'s';p.style.animationDelay=Math.random()*6+'s';c.appendChild(p)}})();
     </script>
 </body>
