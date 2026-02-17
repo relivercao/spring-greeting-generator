@@ -13,7 +13,7 @@
         .ps{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
         .p{position:absolute;border-radius:50%;animation:pf linear infinite}
         @keyframes pf{0%{transform:translateY(-10vh)rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:.8}100%{transform:translateY(110vh)rotate(360deg);opacity:0}}
-        .app{min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:10}
+        .app{min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:10;padding-bottom:80px}
         header{display:flex;justify-content:space-between;padding:25px 40px;animation:sd .8s ease-out}
         @keyframes sd{from{transform:translateY(-60px);opacity:0}to{transform:translateY(0);opacity:1}}
         .ln{font-size:65px;animation:ls 2.8s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,140,0,.7))}
@@ -47,7 +47,7 @@
         .fd{position:absolute;font-size:44px;opacity:.82;animation:fb 4.5s ease-in-out infinite;pointer-events:none;z-index:5}
         @keyframes fb{0%,100%{transform:translateY(0) rotate(-6deg);opacity:.65}50%{transform:translateY(-25px) rotate(6deg);opacity:.95}}
         .f1{top:8%;left:5%}.f2{top:14%;right:7%;animation-delay:.9s}.f3{bottom:18%;left:4%;animation-delay:1.8s}.f4{bottom:22%;right:6%;animation-delay:2.7s}.f5{top:32%;left:2%;animation-delay:3.6s}.f6{top:28%;right:3%;animation-delay:.4s}.f7{bottom:35%;left:8%;animation-delay:2s}.f8{top:45%;right:5%;animation-delay:1.2s}
-        footer{background:linear-gradient(to top,rgba(65,0,0,.96),rgba(80,0,0,.75));padding:35px 25px;text-align:center;border-top:2.5px solid var(--gold);flex-shrink:0}
+        footer{background:linear-gradient(to top,rgba(65,0,0,.96),rgba(80,0,0,.75));padding:35px 25px;text-align:center;border-top:2.5px solid var(--gold);flex-shrink:0;position:relative;margin-top:auto}
         .ftx{font-size:30px;font-weight:600;color:var(--gold);text-shadow:0 0 25px rgba(255,215,.85),3px 3px 6px rgba(0,0,0,.5);letter-spacing:5px}
         @media(max-width:480px){header{padding:18px 20px}.ln{font-size:48px}.card{padding:30px 20px;margin:20px 0}.hs{font-size:90px}.btn{padding:16px 40px;font-size:17px}.ftx{font-size:22px}}
     </style>
