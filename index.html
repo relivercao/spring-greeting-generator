@@ -3,52 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧧 2026新春大吉 | 马年吉祥 🐴</title>
+    <title>🧧 2026除夕快乐 - 马年吉祥 🐴</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --gold: #ffd700; --red: #8b0000; --red-light: #c41e3a; }
-        html, body { height: 100%; }
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
-            background: linear-gradient(180deg, #0a0505 0%, #1a0505 20%, var(--red) 50%, var(--red-light) 100%);
-            color: #fff;
-            min-height: 100vh;
-            overflow-y: auto;
-        }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; text-align: center; }
-        h1 { font-size: clamp(32px, 8vw, 56px); color: var(--gold); margin: 20px 0; }
-        .subtitle { color: var(--gold); font-size: 18px; margin-bottom: 30px; }
-        .horse { font-size: 80px; margin: 20px 0; animation: bounce 1s infinite; }
-        @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
-        .card { background: rgba(139,0,0,0.8); border: 2px solid var(--gold); border-radius: 16px; padding: 25px; margin: 20px 0; }
-        .card-title { color: var(--gold); font-size: 22px; margin-bottom: 15px; }
-        .blessings { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
-        .bless { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; }
-        .btn { padding: 14px 30px; border-radius: 25px; margin: 10px; cursor: pointer; border: none; font-size: 16px; }
-        .btn-gold { background: linear-gradient(135deg, var(--gold), #ff8c00); color: #8b0000; }
-        .footer { background: rgba(80,0,0,0.9); padding: 20px; text-align: center; border-top: 2px solid var(--gold); }
-        .footer-text { color: var(--gold); font-size: 16px; }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#0a0505,#1a0505,#8b0000,#c41e3a);color:#fff;min-height:100vh;overflow-y:auto}
+        .app{min-height:100vh;display:flex;flex-direction:column}
+        main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+        h1{font-size:clamp(32px,8vw,56px);color:#ffd700;text-align:center;margin:20px 0}
+        .subtitle{color:#ffd700;font-size:18px;margin-bottom:30px}
+        .horse{font-size:80px;margin:20px 0;animation:bounce 1s infinite}@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+        .card{background:rgba(139,0,0,0.8);border:2px solid #ffd700;border-radius:16px;padding:25px;margin:20px 0;max-width:450px;width:90%}
+        .card-title{color:#ffd700;font-size:22px;margin-bottom:15px}
+        .fish{font-size:30px;margin:15px 0}
+        .blessings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
+        .bless{background:rgba(0,0,0,0.3);padding:12px;border-radius:8px}
+        .btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;justify-content:center}
+        .btn{padding:14px 30px;border-radius:25px;cursor:pointer;border:none;font-size:16px}
+        .btn-gold{background:linear-gradient(135deg,#ffd700,#ff8c00);color:#8b0000}
+        footer{background:rgba(80,0,0,0.95);padding:20px;text-align:center;border-top:2px solid #ffd700}
+        .footer-text{color:#ffd700;font-size:16px}
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🧧 2026 新春大吉 🐴</h1>
-        <p class="subtitle">大年初一 · 萬象更新</p>
-        <div class="horse">🐴</div>
-        <div class="card">
-            <div class="card-title">✨ 马年大吉 · 万事顺遂 ✨</div>
-            <div style="font-size:30px; margin:15px 0;">🐟 年年有余 🐟</div>
-            <div class="blessings">
-                <div class="bless">🧧 恭喜发财</div>
-                <div class="bless">🎊 万事如意</div>
-                <div class="bless">💰 财源滚滚</div>
-                <div class="bless">❤️ 心想事成</div>
+    <div class="app">
+        <main>
+            <h1>🧧 2026 新春大吉 🐴</h1>
+            <p class="subtitle">大年初一 · 萬象更新</p>
+            <div class="horse">🐴</div>
+            <div class="card">
+                <div class="card-title">✨ 马年大吉 · 万事顺遂 ✨</div>
+                <div class="fish">🐟 年年有余 🐟</div>
+                <div class="blessings">
+                    <div class="bless">🧧 恭喜发财</div>
+                    <div class="bless">🎊 万事如意</div>
+                    <div class="bless">💰 财源滚滚</div>
+                    <div class="bless">❤️ 心想事成</div>
+                </div>
             </div>
-        </div>
-        <button class="btn btn-gold" onclick="location.href='service.html'">🎊 更多服务</button>
-    </div>
-    <div class="footer">
-        <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
+            <div class="btns">
+                <button class="btn btn-gold" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
+        </footer>
     </div>
 </body>
 </html>
