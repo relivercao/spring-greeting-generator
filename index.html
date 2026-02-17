@@ -17,9 +17,10 @@
         .fish{font-size:30px;margin:15px 0}
         .blessings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
         .bless{background:rgba(0,0,0,0.3);padding:12px;border-radius:8px}
-        .btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;justify-content:center}
-        .btn{padding:14px 30px;border-radius:25px;cursor:pointer;border:none;font-size:16px}
-        .btn-gold{background:linear-gradient(135deg,#ffd700,#ff8c00);color:#8b0000}
+        .btns{display:flex;flex-direction:column;gap:12px;margin-top:20px;align-items:center;width:90%;max-width:350px}
+        .btn{padding:14px 30px;border-radius:25px;cursor:pointer;border:none;font-size:16px;width:100%}
+        .btn-gold{background:linear-gradient(135deg,#ffd700,#ff8c00);color:#8b0000;font-weight:bold}
+        .btn-outline{background:transparent;border:2px solid #ffd700;color:#ffd700}
         footer{background:rgba(80,0,0,0.95);padding:20px;text-align:center;border-top:2px solid #ffd700}
         .footer-text{color:#ffd700;font-size:16px}
     </style>
@@ -42,6 +43,7 @@
             </div>
             <div class="btns">
                 <button class="btn btn-gold" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
+                <button class="btn btn-outline" onclick="location.href='service.html'">🎁 更多服务</button>
             </div>
         </main>
         <footer>
