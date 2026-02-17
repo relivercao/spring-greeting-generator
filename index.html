@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>🧧 2026新春大吉 | AI OPENCLAW</title>
     <style>
-        :root{--gold:#ffd700;--red:#8b0000;--red-light:#c41e3a;--cyan:#00ffff}
+        :root{--gold:#ffd700;--red:#8b0000;--red-light:#c41e3a;--cyan:#00ffff;--feishu-blue:#4A90E2}
         *{margin:0;padding:0;box-sizing:border-box}
         html,body{height:100%;width:100%}
         body{font-family:"Noto Serif SC","Microsoft YaHei",sans-serif;background:#8b0000;background:linear-gradient(180deg,#2a0808 0%,#5a1515 25%,#8b0000 50%,#a82020 75%,#c41e3a 100%);background-attachment:fixed;color:#fff;min-height:100vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -34,6 +34,11 @@
         .bless-item:hover{transform:translateY(-3px);background:rgba(255,215,0,0.12)}
         .bless-item .icon{font-size:clamp(20px,4.5vw,28px);display:block;margin-bottom:3px}
         .bless-item .txt{font-size:clamp(11px,2.5vw,13px)}
+        .feishu-cta{background:linear-gradient(135deg,rgba(74,144,226,0.9),rgba(30,90,180,0.95));border:2px solid #fff;border-radius:16px;padding:20px 16px;margin:15px 0;max-width:420px;width:90%;text-align:center;box-shadow:0 0 30px rgba(74,144,226,0.4)}
+        .feishu-title{font-size:clamp(16px,4vw,20px);color:#fff;margin-bottom:8px;font-weight:700}
+        .feishu-desc{font-size:clamp(12px,2.5vw,14px);color:rgba(255,255,255,0.85);margin-bottom:12px}
+        .feishu-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff,#e8f4ff);color:#4A90E2;padding:12px 28px;border-radius:25px;font-size:clamp(14px,3vw,16px);font-weight:700;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
+        .feishu-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
         .service-card{background:linear-gradient(135deg,rgba(90,15,15,0.9),rgba(120,25,35,0.95));border:1.5px solid rgba(255,215,0,0.5);border-radius:14px;padding:16px 14px;margin:10px 0;max-width:420px;width:90%}
         .service-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
         .service-name{font-size:clamp(15px,3.5vw,19px);color:var(--gold);font-weight:600}
@@ -83,23 +88,30 @@
                     <div class="bless-item"><span class="icon">❤️</span><span class="txt">心想事成</span></div>
                 </div>
             </div>
+            <div class="feishu-cta">
+                <div class="feishu-title">📮 联系我们</div>
+                <div class="feishu-desc">添加飞书客服获取定制服务</div>
+                <a href="https://www.feishu.cn/invite/MTw5MmE2MjM1NjU1" target="_blank" class="feishu-btn">
+                    <span>🐱 添加飞书客服</span>
+                </a>
+            </div>
             <div class="service-card">
                 <div class="service-header"><span class="service-name">🎊 新春祝福套餐</span><span class="service-badge">HOT</span></div>
                 <div class="service-desc">AI定制祝福文案 · 朋友圈/小红书模板 · 永久更新</div>
                 <div class="service-price">¥9.9 <span class="orig">¥99</span></div>
-                <div class="btns"><button class="btn btn-gold">🧧 立即获取</button></div>
+                <div class="btns"><button class="btn btn-gold" onclick="alert('请添加飞书客服获取服务')">🧧 立即获取</button></div>
             </div>
             <div class="service-card">
                 <div class="service-header"><span class="service-name">🤖 OpenClaw部署</span><span class="service-badge">NEW</span></div>
                 <div class="service-desc">专属AI助手 · 支持飞书/Telegram/微信</div>
                 <div class="service-price">¥9.9 <span class="orig">¥99</span></div>
-                <div class="btns"><button class="btn btn-gold">🚀 立即部署</button></div>
+                <div class="btns"><button class="btn btn-gold" onclick="alert('请添加飞书客服获取服务')">🚀 立即部署</button></div>
             </div>
             <div class="service-card">
                 <div class="service-header"><span class="service-name">💎 深度定制</span></div>
                 <div class="service-desc">企业知识库 · 自动化流程 · 专属AI</div>
                 <div class="service-price">¥99起</div>
-                <div class="btns"><button class="btn btn-outline">✉️ 联系我们</button></div>
+                <div class="btns"><button class="btn btn-outline" onclick="alert('请添加飞书客服获取定制服务')">✉️ 联系我们</button></div>
             </div>
             <div class="features">
                 <div class="feature"><div class="feature-icon">💬</div><div class="feature-txt">AI对话</div></div>
