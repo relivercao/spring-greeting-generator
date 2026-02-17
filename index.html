@@ -3,51 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧧 2026除夕快乐 - 马年吉祥 🐴</title>
+    <title>🧧 2026新春大吉 | AI OPENCLAW</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
+        :root{--gold:#ffd700;--red:#8b0000;--red-light:#c41e3a}
+        html,body{height:100%}
         body{font-family:"Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#0a0505,#1a0505,#8b0000,#c41e3a);color:#fff;min-height:100vh;overflow-y:auto}
-        .app{min-height:100vh;display:flex;flex-direction:column}
-        main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
-        h1{font-size:clamp(32px,8vw,56px);color:#ffd700;text-align:center;margin:20px 0}
-        .subtitle{color:#ffd700;font-size:18px;margin-bottom:30px}
-        .horse{font-size:80px;margin:20px 0;animation:bounce 1s infinite}@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-        .card{background:rgba(139,0,0,0.8);border:2px solid #ffd700;border-radius:16px;padding:25px;margin:20px 0;max-width:450px;width:90%}
-        .card-title{color:#ffd700;font-size:22px;margin-bottom:15px}
-        .fish{font-size:30px;margin:15px 0}
-        .blessings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
-        .bless{background:rgba(0,0,0,0.3);padding:12px;border-radius:8px}
-        .btns{display:flex;flex-direction:column;gap:12px;margin-top:20px;align-items:center;width:90%;max-width:350px}
-        .btn{padding:14px 30px;border-radius:25px;cursor:pointer;border:none;font-size:16px;width:100%}
+        .container{max-width:600px;margin:0 auto;padding:15px}
+        h1{font-size:clamp(28px,7vw,48px);text-align:center;background:linear-gradient(180deg,#fff,#ffd700,#ff8c00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:15px 0}
+        .subtitle{color:#ffd700;font-size:16px;text-align:center;margin-bottom:20px}
+        .horse{font-size:70px;text-align:center;margin:10px 0;animation:bounce 1s infinite}@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        .card{background:rgba(139,0,0,0.85);border:2px solid #ffd700;border-radius:14px;padding:18px;margin:15px 0}
+        .card-title{color:#ffd700;font-size:18px;margin-bottom:12px}
+        .fish{font-size:26px;margin:12px 0}
+        .blessings{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+        .bless{background:rgba(0,0,0,0.3);padding:10px;border-radius:6px;font-size:13px}
+        .section-title{color:#ffd700;font-size:16px;margin:20px 0 10px;border-bottom:1px solid rgba(255,215,0,0.3);padding-bottom:8px}
+        .service{background:linear-gradient(135deg,rgba(139,0,0,0.7),rgba(80,0,0,0.8));border:1px solid rgba(255,215,0,0.4);border-radius:10px;padding:15px;margin:10px 0}
+        .service-title{color:#ffd700;font-size:15px;margin-bottom:6px}
+        .service-desc{font-size:12px;color:#ccc;margin-bottom:8px}
+        .price{font-size:20px;color:#ffd700;font-weight:bold}
+        .price-orig{font-size:12px;color:#999;text-decoration:line-through;margin-left:5px}
+        .btn{padding:10px 20px;border-radius:20px;cursor:pointer;border:none;font-size:13px;margin:5px 2px}
         .btn-gold{background:linear-gradient(135deg,#ffd700,#ff8c00);color:#8b0000;font-weight:bold}
-        .btn-outline{background:transparent;border:2px solid #ffd700;color:#ffd700}
-        footer{background:rgba(80,0,0,0.95);padding:20px;text-align:center;border-top:2px solid #ffd700}
-        .footer-text{color:#ffd700;font-size:16px}
+        .btn-outline{background:transparent;border:1px solid #ffd700;color:#ffd700}
+        .features{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:15px 0}
+        .feature{background:rgba(0,0,0,0.3);padding:8px;border-radius:6px;text-align:center}
+        .feature-icon{font-size:20px}
+        .feature-text{font-size:11px;margin-top:3px}
+        footer{background:rgba(80,0,0,0.95);padding:15px;text-align:center;border-top:2px solid #ffd700}
+        .footer-text{color:#ffd700;font-size:14px}
     </style>
 </head>
 <body>
-    <div class="app">
-        <main>
-            <h1>🧧 2026 新春大吉 🐴</h1>
-            <p class="subtitle">大年初一 · 萬象更新</p>
-            <div class="horse">🐴</div>
-            <div class="card">
-                <div class="card-title">✨ 马年大吉 · 万事顺遂 ✨</div>
-                <div class="fish">🐟 年年有余 🐟</div>
-                <div class="blessings">
-                    <div class="bless">🧧 恭喜发财</div>
-                    <div class="bless">🎊 万事如意</div>
-                    <div class="bless">💰 财源滚滚</div>
-                    <div class="bless">❤️ 心想事成</div>
-                </div>
+    <div class="container">
+        <h1>🧧 2026 新春大吉 🐴</h1>
+        <p class="subtitle">大年初一 · 萬象更新 · 🤖 AI OPENCLAW</p>
+        <div class="horse">🐴</div>
+        
+        <div class="card">
+            <div class="card-title">✨ 马年大吉 · 万事顺遂 ✨</div>
+            <div class="fish">🐟 年年有余 🐟</div>
+            <div class="blessings">
+                <div class="bless">🧧 恭喜发财</div>
+                <div class="bless">🎊 万事如意</div>
+                <div class="bless">💰 财源滚滚</div>
+                <div class="bless">❤️ 心想事成</div>
             </div>
-            <div class="btns">
-                <button class="btn btn-gold" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
-                <button class="btn btn-outline" onclick="location.href='service.html'">🎁 更多服务</button>
-            </div>
-        </main>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">🎊 新春祝福套餐</div>
+            <div class="service-desc">AI定制祝福文案 · 朋友圈/小红书模板</div>
+            <div class="price">¥9.9 <span class="price-orig">¥99</span></div>
+            <button class="btn btn-gold">🧧 立即获取</button>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">🤖 OpenClaw 部署服务</div>
+            <div class="service-desc">帮你部署专属AI助手 · 支持飞书/Telegram</div>
+            <div class="price">¥9.9 <span class="price-orig">¥99</span></div>
+            <button class="btn btn-gold">🚀 立即部署</button>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">💎 深度定制服务</div>
+            <div class="service-desc">企业知识库接入 · 自动化流程搭建</div>
+            <div class="price">¥99起</div>
+            <button class="btn btn-outline">✉️ 联系我们</button>
+        </div>
+        
+        <div class="features">
+            <div class="feature"><div class="feature-icon">💬</div><div class="feature-text">AI对话</div></div>
+            <div class="feature"><div class="feature-icon">📅</div><div class="feature-text">日程提醒</div></div>
+            <div class="feature"><div class="feature-icon">🤖</div><div class="feature-text">自动化</div></div>
+            <div class="feature"><div class="feature-icon">✍️</div><div class="feature-text">内容创作</div></div>
+        </div>
+        
+        <button class="btn btn-outline" style="width:100%;padding:12px;margin:10px 0" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
+        
         <footer>
-            <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
+            <div class="footer-text">🧧 祝您新年快乐 · 马年吉祥 🐴</div>
+            <div style="font-size:12px;color:#aaa;margin-top:5px">🤖 Powered by OPENCLAW</div>
         </footer>
     </div>
 </body>
