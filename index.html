@@ -5,80 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧧 2026新春大吉 | 马年吉祥 🐴</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{--gold:#ffd700;--gold2:#ffaa00;--red:#8b0000;--red2:#c41e3a}
-        body{font-family:"Noto Serif SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#030303 0%,#0a0505 10%,#1a0505 25%,var(--red)55%,var(--red2)100%);min-height:100vh;color:#fff;overflow-x:hidden;overflow-y:auto}
-        .aurora{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 20%,rgba(255,215,0,.12),transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(255,100,0,.08),transparent 40%);pointer-events:none;z-index:0;animation:aurora 15s ease-in-out infinite}
-        @keyframes aurora{0%,100%{opacity:.8}50%{opacity:1}}
-        .ps{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow-x:hidden;overflow-y:auto}
-        .p{position:absolute;border-radius:50%;animation:pf linear infinite}
-        @keyframes pf{0%{transform:translateY(-10vh)rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:.8}100%{transform:translateY(110vh)rotate(360deg);opacity:0}}
-        .app{min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:10;padding-bottom:80px}
-        header{display:flex;justify-content:space-between;padding:25px 40px;animation:sd .8s ease-out}
-        @keyframes sd{from{transform:translateY(-60px);opacity:0}to{transform:translateY(0);opacity:1}}
-        .ln{font-size:65px;animation:ls 2.8s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,140,0,.7))}
-        .ln:last-child{animation-delay:1.4s}
-        @keyframes ls{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
-        main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
-        .hero{text-align:center;margin-bottom:20px;animation:fu 1s ease-out .2s both}
-        @keyframes fu{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
-        .title{font-size:clamp(58px,15vw,140px);font-weight:950;background:linear-gradient(180deg,#fff 0%,var(--gold) 20%,#ffcc00 50%,#b8860b 80%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 35px rgba(255,180,0,.9));letter-spacing:6px;line-height:1.15;animation:tg 2.5s ease-in-out infinite alternate}
-        @keyframes tg{from{filter:drop-shadow(0 0 30px rgba(255,150,.8))}to{filter:drop-shadow(0 0 55px rgba(255,215,1))}}
-        .sub{font-size:clamp(18px,4.5vw,36px);color:var(--gold);letter-spacing:22px;margin-top:18px;text-shadow:0 0 25px rgba(255,215,.6);font-weight:300}
-        .hs{font-size:130px;margin:25px 0;animation:hg .9s ease-in-out infinite;filter:drop-shadow(0 0 35px rgba(255,200,.6))}
-        @keyframes hg{0%,100%{transform:translateY(0) scale(1) rotate(-2deg)}50%{transform:translateY(-28px) scale(1.06) rotate(2deg)}}
-        .card{background:linear-gradient(155deg,rgba(80,0,0,.82),rgba(120,15,25,.88),rgba(160,25,45,.9));border:2.5px solid var(--gold);border-radius:32px;padding:45px 55px;margin:30px 0;box-shadow:0 0 70px rgba(255,215,.22),0 35px 90px rgba(0,0,0,.45),inset 0 0 60px rgba(255,215,.06);max-width:780px;width:92%;animation:fu 1s ease-out .4s both}
-        .ct{text-align:center;font-size:clamp(24px,5.5vw,40px);color:var(--gold);margin-bottom:28px;text-shadow:0 0 20px rgba(255,215,.55)}
-        .fr{display:flex;align-items:center;justify-content:center;font-size:52px;margin:25px 0;animation:fs 4s ease-in-out infinite}
-        @keyframes fs{0%,100%{transform:translateX(-28px)}50%{transform:translateX(28px)}}
-        .ft{font-size:34px;color:var(--gold);margin:0 28px;text-shadow:0 0 18px rgba(255,215,.5)}
-        .bg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
-        @media(max-width:580px){.bg{grid-template-columns:repeat(2,1fr)}}
-        .bi{background:linear-gradient(140deg,rgba(0,0,0,.55),rgba(0,0,0,.3));border:1.2px solid rgba(255,215,.38);border-radius:20px;padding:18px 12px;text-align:center;transition:all .4s cubic-bezier(.175,.885,.32,1.275)}
-        .bi:hover{transform:translateY(-14px) scale(1.06);background:linear-gradient(140deg,rgba(255,215,.28),rgba(255,140,.22));border-color:var(--gold);box-shadow:0 22px 55px rgba(255,215,.32)}
-        .bi .i{font-size:38px;display:block;margin-bottom:10px}
-        .bi .t{font-size:17px}
-        .bt{display:flex;gap:22px;margin-top:48px;flex-wrap:wrap;justify-content:center;animation:fu 1s ease-out .7s both}
-        .btn{padding:19px 58px;font-size:19px;font-weight:700;border:none;border-radius:55px;cursor:pointer;transition:all .4s;text-decoration:none}
-        .btn-pri{background:linear-gradient(135deg,var(--gold),var(--gold2),#b8860b);color:#4a0000;box-shadow:0 12px 45px rgba(255,215,.55)}
-        .btn-pri:hover{transform:translateY(-7px) scale(1.07);box-shadow:0 22px 70px rgba(255,215,.75)}
-        .btn-sec{background:0 0;color:var(--gold);border:2.2px solid var(--gold)}
-        .btn-sec:hover{background:rgba(255,215,.18);transform:translateY(-7px)}
-        .fd{position:absolute;font-size:44px;opacity:.82;animation:fb 4.5s ease-in-out infinite;pointer-events:none;z-index:5}
-        @keyframes fb{0%,100%{transform:translateY(0) rotate(-6deg);opacity:.65}50%{transform:translateY(-25px) rotate(6deg);opacity:.95}}
-        .f1{top:8%;left:5%}.f2{top:14%;right:7%;animation-delay:.9s}.f3{bottom:18%;left:4%;animation-delay:1.8s}.f4{bottom:22%;right:6%;animation-delay:2.7s}.f5{top:32%;left:2%;animation-delay:3.6s}.f6{top:28%;right:3%;animation-delay:.4s}.f7{bottom:35%;left:8%;animation-delay:2s}.f8{top:45%;right:5%;animation-delay:1.2s}
-        footer{background:linear-gradient(to top,rgba(65,0,0,.96),rgba(80,0,0,.75));padding:35px 25px;text-align:center;border-top:2.5px solid var(--gold);flex-shrink:0;position:relative;margin-top:auto}
-        .ftx{font-size:36px;padding:20px;background:rgba(80,0,0,0.9);border-radius:15px;margin:20px auto;max-width:90%;font-size:30px;font-weight:600;color:var(--gold);text-shadow:0 0 25px rgba(255,215,.85),3px 3px 6px rgba(0,0,0,.5);letter-spacing:5px}
-        @media(max-width:480px){header{padding:18px 20px}.ln{font-size:48px}.card{padding:30px 20px;margin:20px 0}.hs{font-size:90px}.btn{padding:16px 40px;font-size:17px}.ftx{font-size:22px}}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: linear-gradient(180deg, #1a0505, #8b0000, #c41e3a);
+            min-height: 100vh;
+            color: #fff;
+            overflow-y: auto;
+        }
+        .container {
+            min-height: 100vh;
+            padding: 30px 20px 120px;
+            text-align: center;
+        }
+        h1 {
+            font-size: clamp(36px, 10vw, 64px);
+            color: #ffd700;
+            text-shadow: 0 0 20px #ff8c00;
+            margin: 20px 0;
+        }
+        .subtitle {
+            font-size: clamp(18px, 4vw, 28px);
+            color: #ffd700;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+        .horse {
+            font-size: 80px;
+            margin: 20px 0;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .card {
+            background: rgba(139,0,0,0.8);
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .card-title {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .fish {
+            font-size: 36px;
+            margin: 15px 0;
+        }
+        .blessings {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .bless {
+            background: rgba(0,0,0,0.3);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #8b0000;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(80,0,0,0.95), rgba(80,0,0,0.8));
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ffd700;
+            z-index: 100;
+        }
+        .footer-text {
+            color: #ffd700;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .deco { position: fixed; font-size: 30px; opacity: 0.7; }
+        .d1 { top: 10%; left: 5%; }
+        .d2 { top: 10%; right: 5%; }
+        .d3 { bottom: 15%; left: 5%; }
+        .d4 { bottom: 15%; right: 5%; }
     </style>
 </head>
 <body>
-<div class="aurora"></div>
-<div class="ps" id="ps"></div>
-<div class="fd f1">🏮</div><div class="fd f2">🎆</div><div class="fd f3">💰</div><div class="fd f4">🧧</div><div class="fd f5">🎇</div><div class="fd f6">✨</div><div class="fd f7">🧨</div><div class="fd f8">🐟</div>
-<div class="app">
-<header><div class="ln">🏮</div><div class="ln">🏮</div></header>
-<main>
-<div class="hero"><h1 class="title">🧧 2026 新春大吉 🧧</h1><p class="sub">大年初一 · 萬象更新</p></div>
-<div class="hs">🐴</div>
-<div class="card">
-<div class="ct">✨ 马年大吉 · 万事顺遂 ✨</div>
-<div class="fr"><span>🐟</span><span class="ft">年年有余</span><span>🐟</span></div>
-<div class="bg">
-<div class="bi"><span class="i">🧧</span><span class="t">恭喜发财</span></div>
-<div class="bi"><span class="i">🎊</span><span class="t">万事如意</span></div>
-<div class="bi"><span class="i">💰</span><span class="t">财源滚滚</span></div>
-<div class="bi"><span class="i">✨</span><span class="t">吉星高照</span></div>
-<div class="bi"><span class="i">🎉</span><span class="t">岁岁平安</span></div>
-<div class="bi"><span class="i">❤️</span><span class="t">心想事成</span></div>
-</div>
-</div>
-<div class="bt"><button class="btn btn-pri" onclick="alert(\'🎉 新年快乐！愿您万事如意！\')">🎊 送祝福</button><button class="btn btn-sec" onclick="alert(\'定制祝福请联系客服\')">✉️ 定制祝福</button></div>
-</main>
-<footer><div class="ftx">© 2026 春节祝福服务中心 - 时文</div></footer>
-</div>
-<script>
-(function(){const c=document.getElementById('ps'),colors=['#ffd700','#ffed4a','#ffaa00','#fff8dc'];for(let i=0;i<45;i++){const p=document.createElement('div');p.className='p';const s=2+Math.random()*5;p.style.width=s+'px';p.style.height=s+'px';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.boxShadow='0 0 '+s*2+'px '+p.style.background;p.style.animationDuration=(4+Math.random()*4)+'s';p.style.animationDelay=Math.random()*6+'s';c.appendChild(p)}})();
-</script>
+    <div class="d1">🏮</div>
+    <div class="d2">🏮</div>
+    <div class="d3">🎆</div>
+    <div class="d4">💰</div>
+    
+    <div class="container">
+        <h1>🧧 2026 新春大吉 🧧</h1>
+        <p class="subtitle">大年初一 · 萬象更新</p>
+        
+        <div class="horse">🐴</div>
+        
+        <div class="card">
+            <div class="card-title">✨ 马年大吉 · 万事顺遂 ✨</div>
+            <div class="fish">🐟 年年有余 🐟</div>
+            <div class="blessings">
+                <div class="bless">🧧 恭喜发财</div>
+                <div class="bless">🎊 万事如意</div>
+                <div class="bless">💰 财源滚滚</div>
+                <div class="bless">❤️ 心想事成</div>
+            </div>
+        </div>
+        
+        <button class="btn btn-gold" onclick="alert('🎉 新年快乐！')">🎊 送祝福</button>
+        <button class="btn btn-outline" onclick="alert('请联系客服')">✉️ 定制祝福</button>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-text">© 2026 春节祝福服务中心 - 时文</div>
+    </div>
 </body>
 </html>
