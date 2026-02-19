@@ -1,138 +1,265 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧧 2026除夕快乐 - 马年吉祥 🐴</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 4px solid #ffd700;
-        }
-        .title {
-            font-size: 2.5em;
-            color: #c41e3a;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .horse {
-            font-size: 4em;
-            margin: 20px 0;
-            animation: bounce 1s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .wish {
-            font-size: 1.8em;
-            color: #c41e3a;
-            font-weight: bold;
-            margin: 20px 0;
-            padding: 15px;
-            background: linear-gradient(45deg, #ffd700, #ffA500);
-            border-radius: 10px;
-            color: #8b0000;
-        }
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #c41e3a;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            margin: 10px;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
-        }
-        .btn-secondary {
-            background: #ffd700;
-            color: #8b0000;
-        }
-        . lanterns {
-            position: fixed;
-            font-size: 2em;
-            opacity: 0.3;
-        }
-        .l1 { top: 10px; left: 10px; }
-        .l2 { top: 10px; right: 10px; }
-        .l3 { bottom: 10px; left: 10px; }
-        .l4 { bottom: 10px; right: 10px; }
-        .fireworks {
-            position: fixed;
-            font-size: 3em;
-            animation: fade 2s infinite;
-        }
-        @keyframes fade {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 0.5; }
-        }
-        .f1 { top: 20%; left: 10%; animation-delay: 0s; }
-        .f2 { top: 30%; right: 10%; animation-delay: 1s; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧧 2026春节祝福 | AI OPENCLAW</title>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d1810 50%, #1a0a0a 100%);
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ctext y='.9em' font-size='30'%3E🧧%3C/text%3E%3C/svg%3E");
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.header {
+  text-align: center;
+  padding: 30px 0 20px;
+}
+.logo {
+  font-size: 50px;
+  margin-bottom: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+h1 {
+  font-size: 28px;
+  background: linear-gradient(180deg, #ffd700, #ffaa00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  letter-spacing: 4px;
+}
+.subtitle {
+  color: #d4af37;
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.date {
+  color: #888;
+  font-size: 12px;
+}
+.blessing-card {
+  background: linear-gradient(145deg, rgba(40, 20, 15, 0.9), rgba(60, 30, 20, 0.8));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+}
+.blessing-title {
+  font-size: 22px;
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+.blessing-text {
+  font-size: 15px;
+  color: #f5e6d3;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+.blessing-text span {
+  margin: 0 8px;
+  color: #ff6b6b;
+}
+.services {
+  margin: 25px 0;
+}
+.service-card {
+  background: linear-gradient(145deg, rgba(45, 25, 20, 0.85), rgba(30, 15, 10, 0.9));
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+}
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.service-title {
+  color: #ffd700;
+  font-size: 16px;
+  font-weight: bold;
+}
+.service-icon {
+  font-size: 24px;
+}
+.service-desc {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 20px;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+.price-orig {
+  font-size: 13px;
+  color: #666;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+.btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+.btn-gold {
+  background: linear-gradient(145deg, #ffd700, #ffaa00);
+  color: #1a0a0a;
+  font-weight: bold;
+}
+.btn-gold:hover {
+  background: linear-gradient(145deg, #ffdd33, #ffbb11);
+  transform: scale(1.05);
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid #ffd700;
+  color: #ffd700;
+}
+.btn-outline:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+.footer {
+  text-align: center;
+  padding: 25px;
+  color: #666;
+  font-size: 12px;
+}
+.footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+.decoration {
+  position: fixed;
+  font-size: 24px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.dec-1 { top: 10%; left: 5%; }
+.dec-2 { top: 30%; right: 8%; }
+.dec-3 { bottom: 20%; left: 10%; }
+.dec-4 { bottom: 40%; right: 5%; }
+</style>
 </head>
 <body>
-    <div class="lanterns l1">🏮</div>
-    <div class="lanterns l2">🏮</div>
-    <div class="lanterns l3">🏮</div>
-    <div class="lanterns l4">🏮</div>
-    <div class="fireworks f1">🎆</div>
-    <div class="fireworks f2">🎇</div>
-    
-    <div class="container">
-        <div class="title">🧧 2026除夕快乐 🧧</div>
-        <div class="subtitle">辞旧岁 · 迎新春</div>
-        
-        <div class="horse">🐴</div>
-        
-        <div class="wish">
-            马年吉祥 · 马到成功
-        </div>
-        
-        <p style="color: #666; margin: 20px 0;">
-            今日除夕，阖家团圆<br>
-            辞别旧岁，迎接新年<br>
-            愿所有美好都如约而至 🎉
-        </p>
-        
-        <div style="margin: 30px 0;">
-            <button class="btn" onclick="alert('感谢支持！')">
-                🧧 新年快乐
-            </button>
-            <button class="btn btn-secondary" onclick="alert('定制祝福服务，¥9.9/条')">
-                ✨ 定制祝福
-            </button>
-        </div>
-        
-        <p style="color: #999; font-size: 0.9em; margin-top: 20px;">
-            © 2026 春节祝福服务
-        </p>
-    </div>
+<div class="decoration dec-1">🧧</div>
+<div class="decoration dec-2">🎊</div>
+<div class="decoration dec-3">🎆</div>
+<div class="decoration dec-4">🧨</div>
+
+<div class="container">
+<div class="header">
+  <div class="logo">🏮</div>
+  <h1>春 节 吉 祥</h1>
+  <p class="subtitle">正月初三 · 老鼠嫁女日</p>
+  <p class="date">2026年2月19日</p>
+</div>
+
+<div class="blessing-card">
+  <div class="blessing-title">🐴 马年大吉</div>
+  <div class="blessing-text">
+    🧧恭喜发财 · 🎊万事如意<br>
+    💰财源滚滚 · ❤️心想事成<br>
+    🏮吉星高照 · 🍊大吉大利
+  </div>
+</div>
+
+<div class="services">
+<div class="service-card">
+  <div class="service-header">
+    <span class="service-title">🎊 新春祝福套餐</span>
+    <span class="service-icon">✨</span>
+  </div>
+  <div class="service-desc">AI定制祝福文案 · 朋友圈小红书模板</div>
+  <div class="service-footer">
+    <div><span class="price">¥9.9</span><span class="price-orig">¥99</span></div>
+    <button class="btn btn-gold">立即获取</button>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-header">
+    <span class="service-title">🤖 OpenClaw部署</span>
+    <span class="service-icon">🚀</span>
+  </div>
+  <div class="service-desc">帮你部署专属AI助手 · 支持飞书/Telegram</div>
+  <div class="service-footer">
+    <div><span class="price">¥9.9</span><span class="price-orig">¥99</span></div>
+    <button class="btn btn-gold">立即部署</button>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-header">
+    <span class="service-title">💎 深度定制服务</span>
+    <span class="service-icon">🔮</span>
+  </div>
+  <div class="service-desc">企业知识库接入 · 自动化流程搭建</div>
+  <div class="service-footer">
+    <div><span class="price">¥99起</span></div>
+    <button class="btn btn-outline">联系我们</button>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <p>AI OPENCLAW · 让AI为你工作</p>
+  <p style="margin-top:8px;color:#444">Powered by Claude</p>
+</div>
+</div>
 </body>
 </html>
