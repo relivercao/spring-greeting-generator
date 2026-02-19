@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧧 2026新春大吉 | AI OPENCLAW</title>
+    <title>🧧 2026春节祝福 | AI OPENCLAW</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--gold:#ffd700;--red:#8b0000;--red-light:#c41e3a}
@@ -18,7 +18,6 @@
         .fish{font-size:26px;margin:12px 0}
         .blessings{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
         .bless{background:rgba(0,0,0,0.3);padding:10px;border-radius:6px;font-size:13px}
-        .section-title{color:#ffd700;font-size:16px;margin:20px 0 10px;border-bottom:1px solid rgba(255,215,0,0.3);padding-bottom:8px}
         .service{background:linear-gradient(135deg,rgba(139,0,0,0.7),rgba(80,0,0,0.8));border:1px solid rgba(255,215,0,0.4);border-radius:10px;padding:15px;margin:10px 0}
         .service-title{color:#ffd700;font-size:15px;margin-bottom:6px}
         .service-desc{font-size:12px;color:#ccc;margin-bottom:8px}
@@ -33,6 +32,13 @@
         .feature-text{font-size:11px;margin-top:3px}
         footer{background:rgba(80,0,0,0.95);padding:15px;text-align:center;border-top:2px solid #ffd700}
         .footer-text{color:#ffd700;font-size:14px}
+        /* QR Modal */
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;justify-content:center;align-items:center}
+        .modal.show{display:flex}
+        .modal-content{background:#fff;border-radius:15px;padding:20px;text-align:center;max-width:90%;color:#333}
+        .modal-title{color:#c41e3a;font-size:18px;margin-bottom:15px;font-weight:bold}
+        .qr-img{max-width:250px;border-radius:10px}
+        .modal-close{background:#c41e3a;color:#fff;border:none;padding:10px 30px;border-radius:20px;margin-top:15px;cursor:pointer;font-size:14px}
     </style>
 </head>
 <body>
@@ -56,21 +62,21 @@
             <div class="card-title">🎊 新春祝福套餐</div>
             <div class="service-desc">AI定制祝福文案 · 朋友圈/小红书模板</div>
             <div class="price">¥9.9 <span class="price-orig">¥99</span></div>
-            <button class="btn btn-gold">🧧 立即获取</button>
+            <button class="btn btn-gold" onclick="showQR()">🧧 立即获取</button>
         </div>
         
         <div class="card">
             <div class="card-title">🤖 OpenClaw 部署服务</div>
             <div class="service-desc">帮你部署专属AI助手 · 支持飞书/Telegram</div>
             <div class="price">¥9.9 <span class="price-orig">¥99</span></div>
-            <button class="btn btn-gold">🚀 立即部署</button>
+            <button class="btn btn-gold" onclick="showQR()">🚀 立即部署</button>
         </div>
         
         <div class="card">
             <div class="card-title">💎 深度定制服务</div>
             <div class="service-desc">企业知识库接入 · 自动化流程搭建</div>
             <div class="price">¥99起</div>
-            <button class="btn btn-outline">✉️ 联系我们</button>
+            <button class="btn btn-outline" onclick="showQR()">✉️ 联系我们</button>
         </div>
         
         <div class="features">
@@ -87,5 +93,29 @@
             <div style="font-size:12px;color:#aaa;margin-top:5px">🤖 Powered by OPENCLAW</div>
         </footer>
     </div>
+    
+    <!-- QR Modal -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <div class="modal-title">📱 扫码支付</div>
+            <img class="qr-img" src="wechat-pay.jpg" alt="微信支付">
+            <p style="margin-top:10px;color:#666;font-size:12px">微信扫码支付</p>
+            <br>
+            <button class="modal-close" onclick="closeQR()">关闭</button>
+        </div>
+    </div>
+    
+    <script>
+    function showQR() {
+        document.getElementById('qrModal').classList.add('show');
+    }
+    function closeQR() {
+        document.getElementById('qrModal').classList.remove('show');
+    }
+    // 点击背景关闭
+    document.getElementById('qrModal').addEventListener('click', function(e) {
+        if (e.target === this) closeQR();
+    });
+    </script>
 </body>
 </html>
