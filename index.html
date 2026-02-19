@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧧 2026春节祝福 - 马年吉祥 🐴</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 4px solid #ffd700;
+        }
+        .day-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffA500);
+            color: #8b0000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .title {
+            font-size: 2em;
+            color: #c41e3a;
+            margin-bottom: 10px;
+        }
+        .custom-title {
+            font-size: 1.4em;
+            color: #333;
+            margin: 20px 0 10px;
+            padding: 15px;
+            background: #fff5f5;
+            border-radius: 10px;
+            border-left: 4px solid #c41e3a;
+        }
+        .custom-list {
+            text-align: left;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        .custom-list li {
+            margin: 8px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .horse {
+            font-size: 4em;
+            margin: 15px 0;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .wish {
+            font-size: 1.6em;
+            color: #c41e3a;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 12px;
+            background: linear-gradient(45deg, #ffd700, #ffA500);
+            border-radius: 10px;
+            color: #8b0000;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #c41e3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1em;
+            margin: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
+        }
+        .btn-secondary {
+            background: #ffd700;
+            color: #8b0000;
+        }
+        .lanterns {
+            position: fixed;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+        .l1 { top: 10px; left: 10px; }
+        .l2 { top: 10px; right: 10px; }
+        .l3 { bottom: 10px; left: 10px; }
+        .l4 { bottom: 10px; right: 10px; }
+        .fireworks {
+            position: fixed;
+            font-size: 3em;
+            animation: fade 2s infinite;
+        }
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.5; }
+        }
+        .f1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .f2 { top: 30%; right: 10%; animation-delay: 1s; }
+    </style>
+</head>
+<body>
+    <div class="lanterns l1">🏮</div>
+    <div class="lanterns l2">🏮</div>
+    <div class="lanterns l3">🏮</div>
+    <div class="lanterns l4">🏮</div>
+    <div class="fireworks f1">🎆</div>
+    <div class="fireworks f2">🎇</div>
+    
+    <div class="container">
+        <div class="day-badge" id="dayBadge">第？天</div>
+        
+        <div class="title">🧧 2026春节祝福 🐴</div>
+        
+        <div class="horse">🐴</div>
+        
+        <div class="wish" id="mainWish">
+            马年吉祥 · 马到成功
+        </div>
+        
+        <div class="custom-title" id="customTitle">
+            今日风俗
+        </div>
+        <ul class="custom-list" id="customList">
+            <!-- Dynamic content -->
+        </ul>
+        
+        <p style="color: #666; margin: 15px 0; font-size: 0.95em;" id="description">
+        </p>
+        
+        <div style="margin: 20px 0;">
+            <button class="btn" onclick="shareWish()">
+                🧧 新年快乐
+            </button>
+            <button class="btn btn-secondary" onclick="customOrder()">
+                ✨ 定制祝福
+            </button>
+        </div>
+        
+        <p style="color: #999; font-size: 0.8em; margin-top: 15px;">
+            © 2026 春节祝福服务
+        </p>
+    </div>
+
+    <script>
+        // 2026年春节日期（正月初一）
+        const chineseNewYear = new Date('2026-01-29T00:00:00+08:00');
+        
+        // 春节风俗数据
+        const springFestivalData = [
+            { day: 1, name: '初一', title: '拜年日', customs: ['拜年送祝福', '放鞭炮驱邪', '贴春联迎福', '吃年糕步步高'], desc: '新年的第一天，祝福从现在开始！' },
+            { day: 2, name: '初二', title: '回娘家', customs: ['出嫁女儿回娘家', '吃开年饭', '祭拜祖先', '给长辈拜年'], desc: '嫁出的女儿今日回门，共叙亲情！' },
+            { day: 3, name: '初三', title: '老鼠嫁女', customs: ['早睡不熬夜', '老鼠嫁女日', '不出门拜年', '吃合子'], desc: '传说这天老鼠嫁女儿，宜早睡休养。' },
+            { day: 4, name: '初四', title: '迎财神', customs: ['迎接财神爷', '吃折箩菜', '灶王回来', '开市营业'], desc: '财神到！准备迎接一年财运！' },
+            { day: 5, name: '初五', title: '破五', customs: ['破五送穷', '迎财神', '吃饺子', '开市大吉'], desc: '破五穷，迎富贵！' },
+            { day: 6, name: '初六', title: '送穷日', customs: ['送穷出门', '清理垃圾', '开工大吉', '马日'], desc: '送走穷困，迎接新气象！' },
+            { day: 7, name: '初七', title: '人日', customs: ['人胜节吃七宝羹', '戴人胜', '捞鱼生', '庆祝人生日'], desc: '人人生日，共同庆祝！' },
+            { day: 8, name: '初八', title: '谷日', customs: ['祭谷神', '顺星', '开灯酒', '食糯米饭'], desc: '珍惜粮食，感恩大地！' },
+            { day: 9, name: '初九', title: '天公生', customs: ['玉皇大帝诞辰', '祭天祈福', '舞狮庆祝', '燃放鞭炮'], desc: '天公庇佑，国泰民安！' },
+            { day: 10, name: '初十', title: '石头生日', customs: ['祭石感恩', '不动石器', '吃烙饼', '鼠娶亲'], desc: '石神保佑，五谷丰登！' },
+            { day: 11, name: '十一', title: '子孙灯', customs: ['点燃子孙灯', '请紫姑', '吃流水席', '猜灯谜'], desc: '灯火相传，子孙绵延！' },
+            { day: 12, name: '十二', title: '舞龙灯', customs: ['舞龙舞狮', '搭灯棚', '选新娘', '布置元宵'], desc: '龙腾虎跃，欢庆元宵！' },
+            { day: 13, name: '十三', title: '吃稀饭', customs: ['吃稀饭配咸菜', '关灯老鼠嫁女', '检查花灯', '准备元宵'], desc: '简单饮食，寓意年年有余！' },
+            { day: 14, name: '十四', title: '拜顺星', customs: ['拜顺星祈福', '喝亮眼汤', '试花灯', '猜灯谜'], desc: '顺星祈福，好运连连！' },
+            { day: 15, name: '元宵', title: '赏花灯', customs: ['赏花灯', '吃元宵', '猜灯谜', '舞龙狮'], desc: '月圆人团圆，元宵节快乐！🎆' }
+        ];
+        
+        // 计算今天是春节第几天
+        function getFestivalDay() {
+            const now = new Date();
+            const diffTime = now - chineseNewYear;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays + 1; // 初一 = 第1天
+        }
+        
+        // 更新页面内容
+        function updateContent() {
+            const dayNum = getFestivalDay();
+            const dayBadge = document.getElementById('dayBadge');
+            const mainWish = document.getElementById('mainWish');
+            const customTitle = document.getElementById('customTitle');
+            const customList = document.getElementById('customList');
+            const desc = document.getElementById('description');
+            
+            if (dayNum >= 1 && dayNum <= 15) {
+                const data = springFestivalData[dayNum - 1];
+                dayBadge.textContent = `🐴 第${dayNum}天 · ${data.name}`;
+                mainWish.textContent = data.title;
+                customTitle.textContent = `📜 今日风俗：${data.name}`;
+                customList.innerHTML = data.customs.map(c => `<li>${c}</li>`).join('');
+                desc.textContent = data.desc;
+            } else if (dayNum < 1) {
+                // 春节前
+                dayBadge.textContent = '🧧 春节将至';
+                mainWish.textContent = '准备过年';
+                customTitle.textContent = '📜 即将开始';
+                customList.innerHTML = '<li>除夕贴春联</li><li>准备年夜饭</li><li>打扫房屋</li><li>购置年货</li>';
+                desc.textContent = '春节进入倒计时，准备好迎接新年了吗？';
+            } else {
+                // 元宵节后
+                dayBadge.textContent = '🎊 春节已过';
+                mainWish.textContent = '元宵节快乐';
+                customTitle.textContent = '📜 节日回忆';
+                customList.innerHTML = '<li>春节团圆美好</li><li>祝福新年大吉</li><li>万事如意</li><li>马到成功</li>';
+                desc.textContent = '春节已过，但祝福永存！';
+            }
+        }
+        
+        function shareWish() {
+            const dayNum = getFestivalDay();
+            const data = springFestivalData[Math.min(dayNum - 1, 14)] || springFestivalData[0];
+            const wish = `🧧 2026马年吉祥！今天是${data.name}，${data.title}！${data.customs[0]}，${data.customs[1]}... 祝您马年大吉、马到成功！`;
+            if (navigator.share) {
+                navigator.share({ title: '春节祝福', text: wish });
+            } else {
+                alert(wish + '\n\n已复制到剪贴板！');
+            }
+        }
+        
+        function customOrder() {
+            alert('定制祝福服务：¥9.9/条\n请联系客服定制专属祝福！');
+        }
+        
+        // 初始化
+        updateContent();
+    </script>
+</body>
+</html>
