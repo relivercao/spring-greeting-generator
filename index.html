@@ -3,102 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Macode AI · 智能服务平台</title>
+<title>Macode AI · 新春特惠</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:#0a0a0f;color:#e0e0e0;min-height:100vh;overflow-x:hidden}
+body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:#1a0a0a;color:#f5e6d3;min-height:100vh;overflow-x:hidden}
 
-/* Animated background */
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 50%,rgba(72,52,212,0.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(120,60,255,0.1) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(52,120,212,0.1) 0%,transparent 50%);z-index:0;pointer-events:none}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:
+radial-gradient(ellipse at 30% 20%,rgba(180,30,30,0.2) 0%,transparent 50%),
+radial-gradient(ellipse at 70% 60%,rgba(200,150,50,0.1) 0%,transparent 50%),
+radial-gradient(ellipse at 50% 90%,rgba(139,0,0,0.15) 0%,transparent 50%);
+z-index:0;pointer-events:none}
 
 .container{max-width:720px;margin:0 auto;padding:20px 16px;position:relative;z-index:1}
 
+/* Lanterns */
+.lanterns{text-align:center;font-size:36px;letter-spacing:20px;margin-bottom:-10px;filter:drop-shadow(0 0 12px rgba(255,60,60,0.4))}
+
 /* Hero */
-.hero{text-align:center;padding:60px 0 40px}
-.hero-badge{display:inline-block;padding:6px 18px;border-radius:20px;background:linear-gradient(135deg,rgba(120,60,255,0.2),rgba(52,120,212,0.2));border:1px solid rgba(120,60,255,0.3);font-size:12px;color:#a78bfa;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-size:42px;font-weight:700;background:linear-gradient(135deg,#fff 0%,#a78bfa 50%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:12px}
-.hero p{font-size:16px;color:#9ca3af;line-height:1.8;max-width:480px;margin:0 auto}
+.hero{text-align:center;padding:40px 0 30px;position:relative}
+.hero-badge{display:inline-block;padding:6px 20px;border-radius:20px;background:linear-gradient(135deg,rgba(200,150,50,0.2),rgba(180,30,30,0.2));border:1px solid rgba(212,175,55,0.4);font-size:12px;color:#d4af37;letter-spacing:3px;margin-bottom:20px}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:46px;font-weight:700;background:linear-gradient(180deg,#ffd700 0%,#d4af37 40%,#b8860b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.3;margin-bottom:8px;filter:drop-shadow(0 2px 4px rgba(212,175,55,0.3))}
+.hero .year{font-size:20px;color:#d4af37;margin-bottom:12px;letter-spacing:4px}
+.hero p{font-size:15px;color:#c4a882;line-height:1.8;max-width:480px;margin:0 auto}
+
+/* Decorative line */
+.deco-line{text-align:center;margin:24px 0;color:#d4af37;font-size:14px;letter-spacing:8px;opacity:0.5}
 
 /* Glass card */
-.card{background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:28px;margin:16px 0;transition:all 0.3s ease;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,0.3),transparent)}
-.card:hover{border-color:rgba(167,139,250,0.2);transform:translateY(-2px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.card{background:linear-gradient(135deg,rgba(139,0,0,0.15),rgba(80,10,10,0.2));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(212,175,55,0.15);border-radius:16px;padding:28px;margin:16px 0;transition:all 0.3s ease;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.4),transparent)}
+.card:hover{border-color:rgba(212,175,55,0.35);transform:translateY(-2px);box-shadow:0 20px 40px rgba(0,0,0,0.4),0 0 30px rgba(139,0,0,0.15)}
 
 .card-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.card-icon.purple{background:linear-gradient(135deg,#7c3aed,#6d28d9)}
-.card-icon.blue{background:linear-gradient(135deg,#3b82f6,#2563eb)}
-.card-icon.amber{background:linear-gradient(135deg,#f59e0b,#d97706)}
-.card-icon.amber{background:linear-gradient(135deg,#f59e0b,#d97706)}
-.card-icon.emerald{background:linear-gradient(135deg,#10b981,#059669)}
-.card-title{font-size:18px;font-weight:600;color:#f3f4f6}
-.card-desc{font-size:13px;color:#9ca3af;line-height:1.7;margin-bottom:16px}
+.card-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.card-icon.gold{background:linear-gradient(135deg,#d4af37,#b8860b);box-shadow:0 4px 12px rgba(212,175,55,0.3)}
+.card-icon.red{background:linear-gradient(135deg,#dc2626,#991b1b);box-shadow:0 4px 12px rgba(220,38,38,0.3)}
+.card-icon.crimson{background:linear-gradient(135deg,#be123c,#881337);box-shadow:0 4px 12px rgba(190,18,60,0.3)}
+.card-icon.amber{background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 4px 12px rgba(245,158,11,0.3)}
+.card-title{font-size:18px;font-weight:600;color:#f5e6d3}
+.card-desc{font-size:13px;color:#c4a882;line-height:1.7;margin-bottom:16px}
 
 /* Price + QR row */
 .card-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .price-area{display:flex;align-items:baseline;gap:8px}
-.price{font-size:28px;font-weight:700;background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.price-orig{font-size:13px;color:#6b7280;text-decoration:line-through}
+.price{font-size:28px;font-weight:700;background:linear-gradient(135deg,#ffd700,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.price-orig{font-size:13px;color:#8b7355;text-decoration:line-through}
 
 /* QR codes inline */
 .qr-inline{display:flex;gap:10px;align-items:center}
 .qr-item{text-align:center;cursor:pointer;position:relative}
-.qr-item img{width:48px;height:48px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s ease;object-fit:cover}
-.qr-item:hover img{border-color:rgba(167,139,250,0.5);box-shadow:0 0 15px rgba(167,139,250,0.2)}
-.qr-item span{display:block;font-size:10px;color:#9ca3af;margin-top:4px}
+.qr-item img{width:48px;height:48px;border-radius:8px;border:1px solid rgba(212,175,55,0.2);transition:all 0.3s ease;object-fit:cover}
+.qr-item:hover img{border-color:rgba(212,175,55,0.6);box-shadow:0 0 15px rgba(212,175,55,0.2)}
+.qr-item span{display:block;font-size:10px;color:#c4a882;margin-top:4px}
 
 /* QR modal */
-.qr-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);z-index:1000;align-items:center;justify-content:center}
+.qr-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,5,5,0.85);backdrop-filter:blur(10px);z-index:1000;align-items:center;justify-content:center}
 .qr-modal.active{display:flex}
-.qr-modal-content{background:#1a1a2e;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;text-align:center;max-width:320px;width:90%;position:relative}
-.qr-modal-content img{width:220px;height:220px;border-radius:12px;margin:16px 0;object-fit:cover}
-.qr-modal-content h3{color:#f3f4f6;font-size:16px;margin-bottom:4px}
-.qr-modal-content p{color:#9ca3af;font-size:12px}
-.qr-close{position:absolute;top:12px;right:16px;color:#9ca3af;font-size:24px;cursor:pointer;background:none;border:none;line-height:1}
-.qr-close:hover{color:#fff}
+.qr-modal-content{background:linear-gradient(135deg,#2a1010,#1a0808);border:1px solid rgba(212,175,55,0.2);border-radius:20px;padding:32px;text-align:center;max-width:320px;width:90%;position:relative}
+.qr-modal-content img{width:220px;height:220px;border-radius:12px;margin:16px 0;object-fit:cover;border:2px solid rgba(212,175,55,0.2)}
+.qr-modal-content h3{color:#d4af37;font-size:16px;margin-bottom:4px}
+.qr-modal-content p{color:#c4a882;font-size:12px}
+.qr-close{position:absolute;top:12px;right:16px;color:#c4a882;font-size:24px;cursor:pointer;background:none;border:none;line-height:1}
+.qr-close:hover{color:#ffd700}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.3s ease;text-decoration:none}
-.btn-primary{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;box-shadow:0 4px 15px rgba(124,58,237,0.3)}
-.btn-primary:hover{box-shadow:0 6px 25px rgba(124,58,237,0.5);transform:translateY(-1px)}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.15);color:#d1d5db}
-.btn-ghost:hover{border-color:rgba(167,139,250,0.4);color:#a78bfa}
+.btn-primary{background:linear-gradient(135deg,#d4af37,#b8860b);color:#1a0a0a;font-weight:600;box-shadow:0 4px 15px rgba(212,175,55,0.3)}
+.btn-primary:hover{box-shadow:0 6px 25px rgba(212,175,55,0.5);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border:1px solid rgba(212,175,55,0.3);color:#d4af37}
+.btn-ghost:hover{border-color:rgba(212,175,55,0.6);background:rgba(212,175,55,0.05)}
 .btn-full{width:100%}
 
 /* Features grid */
 .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0}
-.feat{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:20px;text-align:center;transition:all 0.3s ease}
-.feat:hover{border-color:rgba(167,139,250,0.2);background:rgba(255,255,255,0.04)}
+.feat{background:linear-gradient(135deg,rgba(139,0,0,0.1),rgba(80,10,10,0.15));border:1px solid rgba(212,175,55,0.08);border-radius:12px;padding:20px;text-align:center;transition:all 0.3s ease}
+.feat:hover{border-color:rgba(212,175,55,0.25);background:linear-gradient(135deg,rgba(139,0,0,0.15),rgba(80,10,10,0.2))}
 .feat-icon{font-size:28px;margin-bottom:8px}
-.feat-title{font-size:13px;font-weight:500;color:#e5e7eb}
-.feat-desc{font-size:11px;color:#6b7280;margin-top:4px}
+.feat-title{font-size:13px;font-weight:500;color:#f5e6d3}
+.feat-desc{font-size:11px;color:#8b7355;margin-top:4px}
+
+/* Blessings */
+.blessings{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0}
+.blessing-tag{padding:6px 14px;border-radius:20px;background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(139,0,0,0.1));border:1px solid rgba(212,175,55,0.15);font-size:12px;color:#d4af37}
 
 /* Divider */
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);margin:32px 0}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.15),transparent);margin:32px 0}
 
 /* Footer */
-.footer{text-align:center;padding:40px 0 20px;color:#4b5563;font-size:12px}
-.footer a{color:#7c3aed;text-decoration:none}
+.footer{text-align:center;padding:40px 0 20px}
+.footer p{color:#5c4a35;font-size:12px}
+.footer a{color:#d4af37;text-decoration:none}
 .footer a:hover{text-decoration:underline}
 
-/* Responsive */
+/* Floating particles */
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(5deg)}}
+.particle{position:fixed;pointer-events:none;z-index:0;animation:float 6s ease-in-out infinite;opacity:0.15;font-size:24px}
+
 @media(max-width:480px){
-.hero h1{font-size:32px}
+.hero h1{font-size:34px}
 .card-bottom{flex-direction:column;align-items:flex-start}
 .qr-inline{margin-top:8px}
 .features{grid-template-columns:1fr}
+.lanterns{font-size:28px;letter-spacing:12px}
 }
 </style>
 </head>
 <body>
+
+<div class="particle" style="top:10%;left:5%;animation-delay:0s">🧧</div>
+<div class="particle" style="top:30%;right:8%;animation-delay:1s">🏮</div>
+<div class="particle" style="top:55%;left:3%;animation-delay:2s">✨</div>
+<div class="particle" style="top:75%;right:5%;animation-delay:3s">🧧</div>
+<div class="particle" style="top:90%;left:10%;animation-delay:4s">🏮</div>
+
 <div class="container">
 
+<div class="lanterns">🏮🏮🏮</div>
+
 <div class="hero">
-<div class="hero-badge">AI Powered Platform</div>
+<div class="hero-badge">✨ 新春特惠 · 限时优惠 ✨</div>
 <h1>Macode AI</h1>
-<p>下一代智能服务平台，为您提供 AI 定制文案、智能部署、企业级解决方案</p>
+<div class="year">🐴 2026 丙午马年 · 万事顺遂 🐴</div>
+<p>新春佳节，Macode AI 智能服务平台恭祝您马年大吉，为您献上新春特惠</p>
+</div>
+
+<div class="blessings">
+<span class="blessing-tag">🧧 恭喜发财</span>
+<span class="blessing-tag">🎊 万事如意</span>
+<span class="blessing-tag">💰 财源滚滚</span>
+<span class="blessing-tag">❤️ 心想事成</span>
+<span class="blessing-tag">🐴 马到成功</span>
 </div>
 
 <div class="features">
@@ -113,10 +150,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 <!-- Token 充值 -->
 <div class="card">
 <div class="card-header">
-<div class="card-icon amber">🪙</div>
+<div class="card-icon gold">🪙</div>
 <div class="card-title">AI Token 充值</div>
 </div>
-<div class="card-desc">Macode AI 平台 Token 充值 · 1元 = 500,000 Tokens · 支持所有主流模型</div>
+<div class="card-desc">Macode AI 平台 Token 充值 · 1元 = 500,000 Tokens · 支持所有主流大模型 · 新春特惠中</div>
 <div class="card-bottom">
 <div class="price-area">
 <span class="price">¥1起</span>
@@ -134,13 +171,13 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 </div>
 </div>
 
-<!-- Service 1 -->
+<!-- AI 文案 -->
 <div class="card">
 <div class="card-header">
-<div class="card-icon purple">✨</div>
-<div class="card-title">AI 智能文案套餐</div>
+<div class="card-icon red">✨</div>
+<div class="card-title">新春祝福套餐</div>
 </div>
-<div class="card-desc">AI 定制祝福文案 · 朋友圈 / 小红书模板 · 多风格可选</div>
+<div class="card-desc">AI 定制新春祝福文案 · 朋友圈 / 小红书模板 · 多风格可选 · 马年专属</div>
 <div class="card-bottom">
 <div class="price-area">
 <span class="price">¥9.9</span>
@@ -159,10 +196,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 </div>
 </div>
 
-<!-- Service 2 -->
+<!-- AI 部署 -->
 <div class="card">
 <div class="card-header">
-<div class="card-icon blue">🚀</div>
+<div class="card-icon crimson">🚀</div>
 <div class="card-title">AI 助手部署服务</div>
 </div>
 <div class="card-desc">帮你部署专属 AI 助手 · 支持飞书 / Telegram / 微信 · 7×24 在线</div>
@@ -184,12 +221,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 </div>
 </div>
 
-<!-- Service 3 -->
+<!-- 企业定制 -->
 <div class="card">
 <div class="card-header">
-<div class=.card-icon.amber{background:linear-gradient(135deg,#f59e0b,#d97706)}
-.card-icon.amber{background:linear-gradient(135deg,#f59e0b,#d97706)}
-.card-icon.emerald">💎</div>
+<div class="card-icon amber">💎</div>
 <div class="card-title">企业深度定制</div>
 </div>
 <div class="card-desc">企业知识库接入 · 自动化流程搭建 · 专属技术支持</div>
@@ -204,11 +239,12 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 <div class="divider"></div>
 
 <div style="text-align:center;margin:20px 0">
-<a href="http://43.156.99.137:3000" class="btn btn-primary btn-full" target="_blank">🎯 进入 Macode AI 平台</a>
+<a href="http://43.156.99.137:3000" class="btn btn-primary btn-full" target="_blank">🐴 进入 Macode AI 平台</a>
 </div>
 
 <div class="footer">
-<p>© 2026 Macode AI · <a href="http://43.156.99.137:3000">macode.ai</a></p>
+<p>🧧 恭贺新春 · 马年大吉 🐴</p>
+<p style="margin-top:8px">© 2026 <a href="http://43.156.99.137:3000">Macode AI</a></p>
 </div>
 
 </div>
