@@ -299,6 +299,73 @@ h1 {
 </style>
 </head>
 <body>
+<script>
+// 春节日期（2026年）
+const SPRING_FESTIVAL = new Date('2026-02-17'); // 农历正月初一
+const FESTIVAL_DATES = {
+    // 除夕前
+    'chuxi': { date: '2026-02-16', title: '除夕', subtitle: '辞旧岁，迎新春', words: ['团圆美满', '岁岁平安', '万事如意'] },
+    // 春节初一到初七
+    'chun1': { date: '2026-02-17', title: '春节', subtitle: '正月初一 · 拜年啦', words: ['新春快乐', '恭喜发财', '吉祥如意'] },
+    'chun2': { date: '2026-02-18', title: '春节', subtitle: '正月初二 · 回娘家', words: ['回娘家', '亲情浓', '幸福满'] },
+    'chun3': { date: '2026-02-19', title: '春节', subtitle: '正月初三 · 贴赤口', words: ['和气生财', '家和万事兴', '出入平安'] },
+    'chun4': { date: '2026-02-20', title: '春节', subtitle: '正月初四 · 迎灶神', words: ['灶神到', '福气满', '财运来'] },
+    'chun5': { date: '2026-02-21', title: '春节', subtitle: '正月初五 · 迎财神', words: ['财源滚滚', '金玉满堂', '日进斗金'] },
+    'chun6': { date: '2026-02-22', title: '春节', subtitle: '正月初六 · 送穷鬼', words: ['送穷鬼', '迎福气顺', '万事'] },
+    'chun7': { date: '2026-02-23', title: '春节', subtitle: '正月初七 · 人日', words: ['人日快乐', '安居乐业', '心想事成'] },
+    // 元宵
+    'yuanxiao': { date: '2026-03-03', title: '元宵节', subtitle: '正月十五 · 上元灯会', words: ['元宵快乐', '花灯璀璨', '团团圆圆'] },
+    // 春节后通用
+    'spring': { date: '2026-02-24', title: '新春', subtitle: '春回大地 · 万物复苏', words: ['春暖花开', '万象更新', '祝福常在'] }
+};
+
+const BLESSING_ICONS = ['💎', '🏮', '🍊', '🎊', '🧧', '✨', '🎆', '🏮', '💰', '🎯'];
+
+function getGreeting() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const todayStr = today.toISOString().split('T')[0];
+    
+    // 排序检查
+    const entries = Object.entries(FESTIVAL_DATES).sort((a, b) => 
+        new Date(b[1].date) - new Date(a[1].date));
+    
+    for (const [key, val] of entries) {
+        const festivalDate = new Date(val.date);
+        if (today >= festivalDate) {
+            return val;
+        }
+    }
+    
+    return { title: '新春', subtitle: '祝福常在', words: ['万事如意', '心想事成', '平安喜乐'] };
+}
+
+function updateGreeting() {
+    const greeting = getGreeting();
+    
+    // 更新标题
+    const subtitleEl = document.getElementById('greeting-subtitle');
+    if (subtitleEl) {
+        subtitleEl.textContent = greeting.subtitle;
+    }
+    const titleEl = document.getElementById('greeting-title');
+    if (titleEl) {
+        titleEl.textContent = greeting.title;
+    }
+    
+    // 更新祝福语
+    const wordsContainer = document.getElementById('blessing-words');
+    if (wordsContainer && greeting.words) {
+        wordsContainer.innerHTML = greeting.words.map((word, i) => 
+            `<div class="blessing-item"><span>${BLESSING_ICONS[i % BLESSING_ICONS.length]}</span>${word}</div>`
+        ).join('');
+    }
+}
+
+// 页面加载后更新
+document.addEventListener('DOMContentLoaded', updateGreeting);
+</script>
 <div class="bg-pattern"></div>
 <div class="floating f1">🧧</div>
 <div class="floating f2">🎊</div>
@@ -315,13 +382,13 @@ h1 {
 <div class="container">
 <div class="header">
   <div class="logo">🏮</div>
-  <h1>新春吉祥</h1>
-  <p class="subtitle">正月初四 · 迎灶神</p>
+  <h1 id="greeting-title">新春吉祥</h1>
+  <p class="subtitle" id="greeting-subtitle">正月初四 · 迎灶神</p>
 </div>
 
 <div class="main-card">
   <div class="blessing-title shine">🐴 马年大吉 🐴</div>
-  <div class="blessing-words">
+  <div class="blessing-words" id="blessing-words">
     <div class="blessing-item"><span>💎</span>财源广进</div>
     <div class="blessing-item"><span>🏮</span>吉星高照</div>
     <div class="blessing-item"><span>🍊</span>大吉大利</div>
