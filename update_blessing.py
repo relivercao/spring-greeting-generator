@@ -3,7 +3,7 @@
 春节祝福页面自动更新脚本
 每天 0 点运行，根据当天日期更新祝福语
 """
-import json
+import re
 from pathlib import Path
 
 # 农历日期映射（2026年春节是2月17日）
@@ -59,20 +59,14 @@ def update_page():
     with open(CHUXI_HTML, encoding="utf-8") as f:
         content = f.read()
     
-    # 更新农历日期
-    old_subtitle = '<p class="subtitle">正月初三 · 老鼠嫁女</p>'
-    new_subtitle = f'<p class="subtitle">{lunar_date} · {custom}</p>'
-    content = content.replace(old_subtitle, new_subtitle)
+    # 使用正则表达式匹配并更新农历日期
+    import re
+    subtitle_pattern = r'<p class="subtitle" id="greeting-subtitle">.*?</p>'
+    new_subtitle = f'<p class="subtitle" id="greeting-subtitle">{lunar_date} · {custom}</p>'
+    content = re.sub(subtitle_pattern, new_subtitle, content)
     
-    # 更新祝福语 - 需要找到对应的 blessing-words 部分
-    old_words = '''<div class="blessing-words">
-    <div class="blessing-item"><span>🧧</span>恭喜发财</div>
-    <div class="blessing-item"><span>🎊</span>万事如意</div>
-    <div class="blessing-item"><span>💰</span>财源滚滚</div>
-    <div class="blessing-item"><span>❤️</span>心想事成</div>
-    <div class="blessing-item"><span>🏮</span>吉星高照</div>
-    <div class="blessing-item"><span>🍊</span>大吉大利</div>
-  </div>'''
+    # 更新祝福语 - 使用正则匹配整个blessing-words块
+    words_pattern = r'<div class="blessing-words">\s*.*?</div>'
     
     # 解析祝福语
     items = blessing.split(" · ")
@@ -86,6 +80,16 @@ def update_page():
         "诸事大吉": "🍊", "好事连连": "🔄", "龙灯舞动": "🐉",
         "五湖四海": "🌏", "欣欣向荣": "🌱", "国泰民安": "🇨🇳",
         "辞旧迎新": "🧨", "新年快乐": "🎉", "万事大吉": "🧧",
+        "子孙满堂": "👶", "幸福安康": "💝", "六六大顺": "6️⃣",
+        "吉庆有余": "🎊", "人寿年丰": "🌾", "风和日丽": "☀️",
+        "天恩浩荡": "🌟", "福寿绵长": "🏮", "喜气盈门": "🎉",
+        "十全十美": "🔟", "富贵吉祥": "💰", "灯火辉煌": "🏮",
+        "前程似锦": "✨", "平安吉祥": "🛡️", "灯烛荧煌": "🕯️",
+        "财星高照": "⭐", "灯红酒绿": "🍷", "富贵荣华": "💎",
+        "万事大吉": "🧧", "落灯收串": "📚", "人气旺盛": "💪",
+        "身体健康": "🏥", "雨水滋润": "💧", "五谷丰登": "🌾",
+        "慈悲为怀": "🙏", "心愿达成": "🎯", "补天祈福": "🌌",
+        "游历四方": "🧳", "平安顺利": "✅", "龙灯舞动": "🐉",
     }
     new_words = '<div class="blessing-words">\n'
     for item in items:
@@ -93,8 +97,8 @@ def update_page():
         new_words += f'    <div class="blessing-item"><span>{emoji}</span>{item}</div>\n'
     new_words += '  </div>'
     
-    if old_words in content:
-        content = content.replace(old_words, new_words)
+    # 使用正则替换祝福语块
+    content = re.sub(words_pattern, new_words, content, flags=re.DOTALL)
     
     # 写回文件
     with open(CHUXI_HTML, "w", encoding="utf-8") as f:
